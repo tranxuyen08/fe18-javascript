@@ -1,0 +1,37 @@
+html {
+  font-size: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  width: 100%;
+}
+
+.login {
+  max-width: 410px;
+  margin: 10em auto;
+}
+
+.login form {
+  width: 100%;
+}
+
+label, input {
+  display: block;
+  width: 200px;
+  margin-bottom: 0.5rem;
+}
+
+label {
+  float: left;
+}
+
+button {
+  clear: both;
+  margin-left: 4rem;
+  background-color: darkgoldenrod;
+}
+/*# sourceMappingURL=style.css.map */
