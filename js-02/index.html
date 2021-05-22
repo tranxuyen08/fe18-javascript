@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1">
+	<title>The Test Scores application</title>
+    <link href="styles.css" rel="stylesheet">
+    <script>
+        var score1 = prompt('Enter Math test score');
+        score1 = parseInt(score1);
+
+        var score2 = prompt('Enter English test score');
+        score2 = parseInt(score2);
+
+        var score3 = prompt('Enter Physics test score');
+        score3 = parseInt(score3);
+
+        var avg = (score1 + score2 + score3)/3;
+    </script>
+</head>
+
+<body>
+	<h1>The Test Scores App</h1>
+    <script>
+        document.write("Math test score = " + score1 +"<br>"
+                        + "English test score = " + score2 + "<br>"
+                        + "Physics test score = " + score3 + "<br><br>"
+                        + "Average score = " + avg + "<br><br>");
+
+    </script>
+    <em>Thanks for your using the Test Scores App.</em>
+</body>
+</html>

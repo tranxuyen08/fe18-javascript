@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1">
+	<title>The MPG application</title>
+    <link href="styles.css" rel="stylesheet">
+    <script>
+        alert('The application to calculate MPG for you');
+
+        var miles = prompt('Enter the miles driven');
+        miles = parseFloat(miles);
+
+        var gallons = prompt('Enter the gallons used');
+        gallons = parseFloat(gallons);
+
+        var mpg = miles/gallons;
+    </script>
+</head>
+
+<body>
+	<h1>The Miles Per Gallon application</h1>
+    <script>
+        document.write("Miles driven = " + miles +"<br>"
+                        + "Gallons of gas = " + gallons + "<br><br>"
+                        + "Miles per gallons = " + mpg + "<br><br>");
+
+    </script>
+    <em>Thanks for your using MPG application.</em>
+</body>
+</html>
