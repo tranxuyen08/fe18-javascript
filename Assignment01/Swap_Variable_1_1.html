@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Swap Variable</title>
+</head>
+<script>
+    var a = prompt("Value of variable a:");
+    var b = prompt('Value of variable b:');
+
+    document.write('<h2>Before swap</h2>')
+    document.write('Current variable a = ' + a + '<br/>');
+    document.write('Current variable b = ' + b + '<br/>');
+    //swap
+    var c = a;
+    a = b;
+    b = c;
+</script>
+<body>
+<script>
+    document.write('<h2>After swap</h2>')
+    document.write('New variable a = ', a + '<br/>');
+    document.write('New variable b = ', b + '<br/>');
+</script>
+</body>
+</html>

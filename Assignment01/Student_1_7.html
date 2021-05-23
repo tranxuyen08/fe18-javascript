@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Student</title>
+</head>
+<script>
+    var students = [];
+    var end = false;
+    do {
+        do {
+            var studentCode = prompt('Student Code: ');
+            if (studentCode == null) {
+                end = true;
+                break;
+            }
+        } while (studentCode == '')
+        if (!end) {
+            do {
+                var studentName = prompt('Student Name: ');
+                if (studentName == null) {
+                    end = true;
+                    break;
+                }
+            } while (studentName == '');
+        }
+        if (!end) {
+            do {
+                var studentAge = prompt('Student Age: ');
+                if (studentAge == null) {
+                    end = true;
+                    break;
+                }
+            } while (studentAge == '' || studentAge <= 0 || isNaN(studentAge));
+        }
+        if (!end) {
+            do {
+                var studentSex = prompt('Student Sex (1 : Nam, 0: Nữ): ');
+                if (studentSex == null) {
+                    end = true;
+                    break;
+                }
+            } while (studentSex != 1 && studentSex != 0);
+        }
+        if (!end) {
+            var student = [studentCode, studentName, studentAge, studentSex];
+            students.push(student);
+        }
+    } while (!end);
+</script>
+<body>
+<script>
+    for (let i = 0; i < students.length; i++) {
+        document.write('<h2>Student ' + (i + 1) + '</h2><br/>');
+        document.write('Code: ' + students[i][0] + '<br/>');
+        document.write('Name: ' + students[i][1] + '<br/>');
+        document.write('Age: ' + students[i][2] + '<br/>');
+        document.write('Sex: ' + (students[i][3] == 1 ? 'Nam' : 'Nữ') + '<br/><br/>');
+    }
+</script>
+</body>
+</html>

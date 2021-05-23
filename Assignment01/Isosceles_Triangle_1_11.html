@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Isosceles Triangle</title>
+    <script>
+        do {
+            var h = prompt('Enter the height of the triangle (h > 0):');
+            if (!isNaN(h) && h != '' && h != null) {
+                h = Number(h);
+            }
+        } while (!Number.isInteger(h) || h < 1);
+    </script>
+</head>
+<body style="white-space: pre;">
+<script>
+    for (let i = 1; i <= h; i++) {
+        for (let j = 0; j < (h - i); j++) {
+            document.write(' ');
+        }
+        for (let j = 1; j <= i; j++) {
+            document.write('*');
+        }
+        document.write('<br/>');
+    }
+</script>
+</body>
+</html>

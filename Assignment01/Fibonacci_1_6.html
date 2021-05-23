@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fibonacci</title>
+</head>
+<body>
+<script>
+    var fibinaci = [1, 1];
+    document.write('<h1>The first 20 Fibonacci numbers:</h1>')
+    document.write('F1 = 1<br/>');
+    document.write('F2 = 1<br/>');
+    for (let i = 3; i <= 20; i++) {
+        fibinaci.push(fibinaci[fibinaci.length - 1] + fibinaci[fibinaci.length - 2]);
+        document.write('F' + i + ' = ' + fibinaci[i - 1] + '<br/>');
+    }
+</script>
+</body>
+</html>

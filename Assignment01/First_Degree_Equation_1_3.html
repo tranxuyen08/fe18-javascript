@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First Degree Equation</title>
+</head>
+<script>
+    do {
+        var a = prompt("ax + b = 0\na = ");
+    } while (isNaN(a) || a == '')
+    a = parseFloat(a);
+    do {
+        var b = prompt("ax + b = 0\nb = ");
+    } while (isNaN(b) || b == '')
+    b = parseFloat(b);
+</script>
+<body>
+<script>
+    document.write('Equation: ' + a + 'x + ' + b + ' = 0<br/>');
+    if (a != 0) {
+        document.write('x = ' + (-b / a));
+    } else if (b == 0) {
+        document.write("Phương trình có vô số nghiệm!")
+    } else {
+        document.write('Phương trình vô nghiệm!')
+    }
+</script>
+</body>
+</html>

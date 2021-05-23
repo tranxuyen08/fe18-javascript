@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Greatest Common Divisor</title>
+    <script>
+        var greatestCommonDivisor = function (a, b) {
+            var lastIndex = a < b ? a : b;
+            for (let i = lastIndex; i > 0; i--) {
+                if (a % i == 0 && b % i == 0) {
+                    return i;
+                }
+            }
+        }
+        do {
+            var a = prompt('Integer a =');
+            if (!isNaN(a) && a != '' && a != null) {
+                a = Number(a);
+            }
+        } while (!Number.isInteger(a) || a < 1);
+
+        do {
+            var b = prompt('Integer b =');
+            if (!isNaN(b) && b != '' && b != null) {
+                b = Number(b);
+            }
+        } while (!Number.isInteger(b) || b < 1);
+    </script>
+</head>
+<body>
+<script>
+    var gCD = greatestCommonDivisor(a, b);
+    document.write('Greatest Common Divisor of ' + a + ' and ' + b + ' = ' + gCD);
+</script>
+</body>
+</html>
