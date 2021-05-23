@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Average Test Scores</title>
+    <script src="js/score.js"></script>
+</head>
+<body onload="average()">
+<script>
+    if (isValid) {
+        document.write("<h1>The Test Scores App</h1>");
+        document.write(
+            "Score 1 = " + score1 + "<br>" +
+            "Score 2 = " + score2 + "<br>" +
+            "Score 3 = " + score3 + "<br><br>" +
+            "Average score = " + averageScore + "<br><br>",
+        );
+        document.write('<h2>Thanks for using the Test Scores application!</h2>');
+    } else {
+        document.write('<h1>Invalid input!</h1>');
+    }
+</script>
+</body>
+</html>
