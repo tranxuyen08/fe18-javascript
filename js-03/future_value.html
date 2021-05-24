@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1">
+	<title>Exercise 3-1</title>
+    <script>
+        var investment;
+        var rate;
+        var year;
+        var total;
+        var array = [];
+        investment = prompt('Enter the amount of money (USD)',1000);
+        investment = parseFloat(investment);
+        year = parseInt(prompt('Enter the number of years',5));
+        rate = prompt('Enter the investment rate (%)',7.5);
+        rate = parseFloat(rate);
+        total = investment;
+        for (var i=1; i <= year; i++) {
+            total += total*rate/100;
+            array[i] = total;
+        }
+    </script>
+</head>
+
+<body>
+	<h1>The Future Value App</h1>
+    <script>
+        var count;
+        document.write('Investment amount = ' + investment + ' (USD)' + '<br>'
+                        + 'Rate = ' + rate + ' (%)' + '<br>'
+                        + 'Year = ' + year + ' (years)' + '<br><br>');
+        for (count=1; count <= year; count++) {
+            document.write('Year ' + count + ': ' + parseInt(array[count]) + ' (USD)' + '<br><br>');
+        }
+        
+    </script>
+    <em>Thanks for your using Future Value application.</em>
+</body>
+</html>

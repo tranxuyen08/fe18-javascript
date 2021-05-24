@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1">
+	<title>Exercise 3-2</title>
+    <link href="styles.css" rel="stylesheet">
+    <script>
+        var entry;
+        var score = [];
+        var total = 0;
+        var average;
+        var show = 'The test scores:\n';
+        do {
+            entry = prompt('Enter your score' + ' Or enter 999 to finish app',999);
+            entry = parseInt(entry);
+            if (entry>=0 && entry<=10) {
+                score[score.length] = entry;
+            } else if (!entry == 999) {
+                alert('Please enter number from 0-100' + ' Or enter 999 to finish app');
+            }
+        } while (entry != 999);
+        for (var i=0; i<score.length;i++) {
+            total += score[i];
+            show += score[i] +'\n';
+        }
+        average = parseInt(total/score.length);
+        alert(show + '\nAverage score =' + average);
+    </script>
+</head>
+
+<body>
+	<h1>The Test Scores application</h1>
+    
+    <em>Thanks for your using Test scores application.</em>
+</body>
+</html>
