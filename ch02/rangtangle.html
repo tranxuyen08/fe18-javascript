@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var length = prompt("Enter length = ", 25);
+      length = parseFloat(length);
+      var width = prompt("Enter width = ", 10);
+      width = parseFloat(width);
+      if (!isNaN(width) && width > 0 && length > 0 && !isNaN(length)) {
+        var area = width * length;
+        area = parseFloat(area);
+        var perimeter = (width + length) * 2;
+        perimeter = parseFloat(perimeter);
+      } else {
+        alert("Nhập sai dữ liệu đầu vào");
+      }
+    </script>
+  </head>
+  <body>
+    <script>
+      document.write("<h1>The Area and Perimeter App</h1>");
+      document.write(
+        "Length = " +
+          length +
+          "<br>" +
+          "Width = " +
+          width +
+          "<br><br>" +
+          "Area = " +
+          area +
+          "<br>" +
+          "Perimeter = " +
+          perimeter +
+          "<br><br>"
+      );
+    </script>
+    Thanks for using The Area and Perimeter application!
+  </body>
+</html>
