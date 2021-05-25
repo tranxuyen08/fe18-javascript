@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var miles = prompt("Enter milers drives = ", 125);
+      miles = parseFloat(miles);
+      var gallons = prompt("Enter gallons of gas = ", 12);
+      gallons = parseFloat(gallons);
+      if (!isNaN(miles) && miles > 0 && gallons > 0 && !isNaN(gallons)) {
+        var mpg = miles / gallons;
+        mpg = parseInt(mpg);
+      } else {
+        alert("Nhập sai dữ liệu đầu vào");
+      }
+    </script>
+  </head>
+  <body>
+    <script>
+      document.write("<h1>The Milles Per Gallon Application</h1>");
+      document.write("milers drives = " + miles + "<br>" + 
+                     "gallons of gas = " + gallons + "<br><br>" +
+                     "milers per gallon = " + mpg + "<br><br>");
+    </script>
+    Thanks for using our MPG application!
+  </body>
+</html>
