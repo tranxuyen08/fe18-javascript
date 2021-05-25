@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Area and Perimeter App</title>
+    <script>
+          var width = prompt("Enter width:");
+          width = parseFloat(width);
+        var height = prompt("Enter height:");
+        height = parseFloat(height);
+        var Area = width*height;
+        var Perimeter = 2*(width+height);
+        alert("Area = " + Area );
+        alert("Perimeter = " + Perimeter );
+       
+    </script>
+</head>
+<body>
+    <p id="content"></p>
+    <script>
+     document.getElementById("content").innerHTML ="width= "+width+"<br>"+"height= "+height+"<br>"+"Area = " + Area +"<br>"+"Perimeter = " + Perimeter;
+    </script>
+</body>
+</html>

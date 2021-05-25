@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Scores</title>
+    <script>
+        var check,temp;
+        var arr = [];
+        var max = 0;
+        var show = "The test scores:\n";
+        do {
+            temp = parseInt( prompt("enter number form 0 to 999: "))
+            if (temp>=0 && temp<999)
+            {
+            arr.push(temp);
+            if (max<temp){
+                max= temp;
+            }
+        }
+        }
+        while(temp!=999)
+        var sum = arr.reduce(function(a,b){return a+b},0);
+        
+        for (var i = 0;i<arr.length;i++){
+           show = show + arr[i]  + "\n";
+        }
+        show = show +"Average score is " + parseInt(sum/arr.length)+ "\n";
+        show = show +"Max score is " + parseInt(max)+ "\n";
+        alert(show) ;
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

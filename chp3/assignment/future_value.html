@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Value</title>
+    <script>
+
+        var inMoney,rate,years,futureValue;
+        inMoney = parseInt(prompt("enter investment money: "));
+        rate = parseFloat(prompt("enter interest money: "));
+        years = parseInt(prompt("enter number years: "))
+        futureValue = inMoney;
+    </script>
+</head>
+<body>
+    <script>
+         document.writeln("Investment amount = " + inMoney + "<br>");
+        document.writeln(" Interest rate = " + rate + "<br>");
+        document.writeln(" Years = " + years + "<br>");
+        for (var i = 0;i<years;i++){
+            futureValue = futureValue + (futureValue * rate) / 100;
+            document.writeln(" Years = " + (i+1)+ " Values= "+ parseInt(futureValue) + "<br>" );
+        }
+    </script>
+</body>
+</html>

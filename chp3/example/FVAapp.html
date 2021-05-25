@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Value application</title>
+    <script>
+        var money =parseFloat(prompt("enter amount money: "));
+        var rate = parseFloat(prompt("enter rate number: "));
+        var NumberYear = parseInt(prompt("enter number years:"));
+        var GetMoney =money;
+       for (var i=0 ;i<NumberYear;i++){
+            GetMoney = GetMoney + GetMoney *rate/100;
+       }
+
+    </script>
+</head>
+<body>
+    <script>
+        document.write("amount your money: " +money+"<br>");
+        document.write("number rate: " +rate +"<br>");
+        document.write("number year: " +NumberYear +"<br>");
+        document.write("Amount money you get before "+ NumberYear+" is: " +GetMoney +"<br>");
+
+    </script>
+    <p>thank for you use Future Value app</p>
+</body>
+</html>
