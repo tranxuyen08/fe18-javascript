@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1>Tính điểm và xếp hạng</h1>
+    <form id="form" method="" action="">
+      <label for="toan">Toán:</label>
+      <input type="text" id="toan" name="toan" />
+      <span id="toanError">*</span><br />
+
+      <label for="ly">Lý:</label>
+      <input type="text" id="ly" name="ly" />
+      <span id="lyError">*</span><br />
+
+      <label for="hoa">Hoá:</label>
+      <input type="text" id="hoa" name="hoa" />
+      <span id="hoaError">*</span><br />
+
+      <label for="average">Average score:</label>
+      <input disabled type="text" id="average" name="average score" />
+      <br />
+      <label for="rank">Rank:</label>
+      <input disabled type="text" id="rank" name="rank score" />
+      <!-- <span id="msgError">*</span><br /> -->
+      <br />
+      <input type="button" id="calculator" value="Calculator" />
+    </form>
+    <script src="./main.js"></script>
+  </body>
+</html>
