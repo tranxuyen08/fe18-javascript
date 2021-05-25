@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ <style>
+  main{
+   width: 80%;
+   margin: 0 auto;
+   background-color: #eee;
+   padding: 1em;
+  }
+ </style>
+ <script>
+  var length = prompt('Enter length');
+  length = parseFloat(length);
+  var width = prompt("Enter width");
+  width = parseFloat(length);
+  var area = length * width;
+  var perimeter = (2 * length) + (2 * width);
+ </script>
+</head>
+<body>
+  <main>
+   <script>
+    document.write("<h1>The Area and Perimeter App</h1>" +
+                  "Length = " + width + '<br>' + 
+                  'width = ' + width + '<br>' +
+                  'Area = ' + area + '<br>' +
+                  'Perimeter = ' + perimeter + '<br>')
+   </script>
+   <p>Thanks for using the Area and Perimeter application!</p>
+  </main>
+</body>
+</html>
