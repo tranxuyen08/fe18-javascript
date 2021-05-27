@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+
+        label {
+          width: 10rem;
+          float: left;
+        }
+        span{
+          color: red;
+        }
+        input {
+          width: 10rem;
+          margin-bottom: 0.5rem;
+        }
+        input[type="button"] {
+          margin-left: 10rem;
+          width: 10.5rem;
+        }
+      </style>
+  </head>
+  <body>
+    <h1>Calculate Miles Per Gallon</h1>
+    <form id="mpgform" method="" action="">
+      <label for="miles">Miles Driven:</label>
+      <input type="text" id="miles" name="miles" />
+      <span id="milesError">*</span><br />
+
+      <label for="gallons">Gallons of Gas Used:</label>
+      <input type="text" id="gallons" name="gallons" />
+      <span id="gallonError">*</span><br />
+
+      <label for="mpg">Miles Per Gallon:</label>
+      <input disabled type="text" id="mpg" name="Miles Per Gallon" />
+      
+      <br />
+      <input type="button" id="calculator" value="Calculator MPG" />
+      <input type="reset" value="Clear Entries" />
+    </form>
+    <script>
+    const $ = (id) => {
+        return document.getElementById(id);
+    };
+
+    calculator.onclick = function calculatormpg ()  {
+        let miles = $("miles").value;
+        let gallons = $("gallons").value;
+        let isValid = true;
+
+  // data validation
+  if (miles == "") {
+    $("milesError").childNodes[0].nodeValue = "This field is required";
+    isValid = false;
+  } else if (miles <= 0) {
+      $("milesError").childNodes[0].nodeValue = "Miles must be greater than Zero";
+      isValid = false;
+    } else if (isNaN(miles)) {
+      $("milesError").childNodes[0].nodeValue = "Miles must be Numeric";
+      isValid = false;
+    } else {
+      $("milesError").childNodes[0].nodeValue = "";
+    }
+  
+
+  if (gallons == "") {
+    $("gallonError").childNodes[0].nodeValue = "This field is required";
+    isValid = false;
+  } else if (gallons <= 0) {
+      $("gallonError").childNodes[0].nodeValue =
+        "Gallons must be greater than Zero";
+      isValid = false;
+    } else if (isNaN(gallons)) {
+      $("gallonError").childNodes[0].nodeValue = "Gallons must be Numeric";
+      isValid = false;
+    } else {
+      $("gallonError").childNodes[0].nodeValue = "";
+    }
+  
+
+  if (isValid === true) {
+   
+    let mpg = parseInt( miles / gallons )
+    $("mpg").value = mpg;
+  }
+    }
+
+
+
+
+    </script>
+  </body>
+</html>

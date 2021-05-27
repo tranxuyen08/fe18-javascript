@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+     body {
+      font-family: Verdana, Arial, Helvetica, sans-serif;
+      font-size: 100%;
+      background-color: white;
+      width: 730px;
+      margin: 0 auto;
+      border: 3px solid blue;
+      padding: 0 2rem 1rem;
+      box-shadow: 3px 3px 3px #01019e;
+      }
+     h1 {
+      font-size: 150%;
+      color: blue;
+       margin-bottom: 1rem;
+      }
+     label {
+      float: left;
+      width: 14rem;
+     }   
+     input {
+       width: 15rem;
+       margin-left: 1rem;
+       margin-bottom: 0.5rem;
+     }
+     input[type="button"] {
+       margin-left: 15rem;
+       width: 150px;
+     }
+     span{
+      color: red;
+     }
+    </style>
+  </head>
+  <body>
+    <h1>Future Value Calculator</h1>
+    <form id="FVform" method="" action="">
+      <label for="investment">Total Investment:</label>
+      <input type="text" id="investment" name="investment" />
+      <span id="investmentError">*</span><br />
+
+      <label for="rate">Annual Interest Rate:</label>
+      <input type="text" id="rate" name="rate" />
+      <span id="rateError">*</span><br />
+
+      <label for="year">Number of Year:</label>
+      <input type="number" min="0" max="100" step="1" id="year" name="year" />
+      <span id="yearError">*</span><br />
+
+      <label for="futurevalue">Future Value:</label>
+      <input disabled type="text" id="futurevalue" name="future value" />
+      <br />
+      <input type="button" id="calculator" value="Calculators" />
+    </form>
+    <script>
+     const $ = (id) => {
+      return document.getElementById(id);
+     };
+     calculator.onclick = () => {
+      let investment = $("investment").value;
+      investment = parseFloat(investment);
+      let rate = $("rate").value;
+      rate = parseFloat(rate);
+      let year = $("year").value;
+      let isValid = true;
+
+      // data validation
+      if (investment == "") {
+        $("investmentError").childNodes[0].nodeValue = "This field is required";
+        isValid = false;
+      } else {
+        if (investment <= 0) {
+          $("investmentError").childNodes[0].nodeValue =
+            "Investment must be greater than Zero";
+          isValid = false;
+        } else if (isNaN(investment)) {
+          $("investmentError").childNodes[0].nodeValue = "Investment must be Numeric";
+          isValid = false;
+        } else {
+          $("investmentError").childNodes[0].nodeValue = "";
+        }
+      }
+
+      if (rate == "") {
+        $("rateError").childNodes[0].nodeValue = "This field is required";
+        isValid = false;
+      } else {
+        if (rate <= 0) {
+          $("rateError").childNodes[0].nodeValue = "Rate must be greater than Zero";
+          isValid = false;
+        } else if (isNaN(rate)) {
+          $("rateError").childNodes[0].nodeValue = "Rate must be Numeric";
+          isValid = false;
+        } else {
+          $("rateError").childNodes[0].nodeValue = "";
+        }
+      }
+
+      if (year == "") {
+        $("yearError").childNodes[0].nodeValue = "This field is required";
+        isValid = false;
+      } else {
+        if (year <= 0) {
+          $("yearError").childNodes[0].nodeValue = "Year must be greater than Zero";
+          isValid = false;
+        } else if (isNaN(year)) {
+          $("yearError").childNodes[0].nodeValue = "Year must be Numeric";
+          isValid = false;
+        } else if (Number.isInteger(year)) {
+          $("yearError").childNodes[0].nodeValue = "Year must be Integer";
+          isValid = false;
+        } else {
+          $("yearError").childNodes[0].nodeValue = "";
+        }
+      }
+
+      if (isValid == true) {
+        let FutureValue;
+        let Rateper = rate * 0.01;
+        FutureValue = investment;
+        for (let i = 1; i <= year; i++) {
+          FutureValue += FutureValue * Rateper;
+        }
+        $("futurevalue").value = FutureValue.toFixed(2);
+      }
+         }
+
+    </script>
+  </body>
+</html>
