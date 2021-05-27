@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Calculate Miles Per Gallon</title>
+    <style>
+      label {
+        width: 10rem;
+        float: left;
+      }
+      span{
+        color: red;
+      }
+      input {
+        width: 10rem;
+        margin-bottom: 0.5rem;
+      }
+      input[type="button"] {
+        margin-left: 10rem;
+        width: 10.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Calculate Miles Per Gallons</h1>
+      <form id="mpg_form" name="mpg_form" action="" method="GET">
+        <label for="miles">Miles Driven:</label>
+        <input type="text" id="miles" name="miles" autofocus />
+        <span id="miles_vali">*</span>
+        <br />
+
+        <label for="gallons">Gallons of Gas used:</label>
+        <input type="text" id="gallons" name="gallons" />
+        <span id="gallons_vali">*</span>
+        <br />
+
+        <label for="mpg_result">Miles per Gallons:</label>
+        <input type="text" id="mpg_result" name="mpg_result" disabled />
+        <br />
+
+        <input type="button" id="calculate" value="Calculate MPG" /><br>
+        <input type="button" id="clear" value="Clear entries" />
+      </form>
+    </main>
+    <script src="js/mpg.js"></script>
+  </body>
+</html>
