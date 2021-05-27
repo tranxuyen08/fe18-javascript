@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPG app</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <form action="" id="form-1" class="form">
+        <div class="form__group">
+            <label for="Miles">Miles Driven</label>
+            <input type="text" id = "Miles" >
+            <p class="error"></p>
+        </div>
+        <div class="form__group">
+            <label for="Gallons">Gallons of Gas Used</label>
+            <input type="text" id="Gallons" >
+            <p class="error"></p>
+        </div>
+        <div class="form__group">
+            <label for="Per-Gallon">Miles Per Gallon</label>
+            <input type="text" name="password" id="Per-Gallon"  disabled>
+            <p id="e_password" class="error"></p>
+        </div>
+        <div class="form__group">
+            <button class="btn btn-submit">Submit</button>
+            <button class="btn btn-clear">Clear</button>
+        </div>
+    </form>
+    <script src="js/check_MPG.js"></script>
+    <script>
+        Valid({ 
+            form:"#form-1",
+            rules:
+            [
+                Valid.isNumeric('#Miles'),
+                Valid.isGreatThanZero('#Miles'),
+                Valid.isNumeric('#Gallons'),
+                Valid.isGreatThanZero('#Gallons')
+            ]
+    
+        });
+    </script>
+</body>
+</html>

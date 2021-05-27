@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/form_email.css">
+</head>
+<body>
+    <div class="form">
+        <form action="" method="POST" id="form-1">
+            <div class="form__group">
+                <label for="Full-name">Full Name</label>
+                <input type="text" name="Full-name" id = "Full-name" placeholder="Nguyen van A" >
+                <p id="e_re-email" class="error"></p>
+            </div>
+            <div class="form__group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Vd: Wiliam1307@gmail.com">
+                <p id="e_email" class="error"></p>
+            </div>
+            <div class="form__group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="enter your password">
+                <p id="e_password" class="error"></p>
+            </div>
+            <div class="form__group">
+                <label for="re-password">Re-Password</label>
+                <input type="password" name="re-password" id="re-password" placeholder="enter re-password">
+                <p id="e_password" class="error"></p>
+            </div>
+            <button class="sub">Submit</button>
+        </form>
+    </div>
+    <script src="./js/validator.js"></script>
+    <script>
+        Validator({ 
+            form:'#form-1',
+            rules:[
+                Validator.isRequired("#Full-name"),
+                Validator.isRequired("#email"),
+                Validator.isEmail("#email"),
+                Validator.isRequired("#password"),
+                Validator.isPassword("#password"),
+                Validator.isRequired("#re-password"),
+                Validator.isSamePassword("#password","#re-password")
+               
+                ]
+                    
+         });
+    </script>
+</body>
+</html>

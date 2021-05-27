@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/form_email.css">
+</head>
+<body>
+    <div class="form">
+        <form action="" method="POST">
+            <div class="form__group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="enter your email">
+                <p id="e_email" class="error"></p>
+            </div>
+            <div class="form__group">
+                <label for="re-email">Re-Email</label>
+                <input type="email" name="re-email" id = "re-email" placeholder="enter re-email" >
+                <p id="e_re-email" class="error"></p>
+            </div>
+            <div class="form__group">
+                <label for="Password">Password</label>
+                <input type="password" name="Password" id="Password" placeholder="enter your password">
+                <p id="e_password" class="error"></p>
+            </div>
+       
+        <button class="btn">Submit</button>
+    </form></div>
+    <script src="./js/checkemail.js"></script>
+</body>
+</html>
