@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Future Value</title>
+    <script>
+      function futurevalue() {
+        var money = prompt("Enter Investment amount = ", 10000);
+        money = parseFloat(money);
+        var rate = prompt("Enter Interest rate = ", 7.5);
+        rate = parseFloat(rate);
+        var year = prompt("Enter Years = ", 5);
+        year = parseInt(year);
+        document.write(
+          "Investment amount = " + money +
+          " Interest rate = " + rate +
+          " Years = " + year + "<br>");
+        var TotalMoney = money;
+        for (var i = 1; i <= year; i++) {
+          var Interest = TotalMoney * (rate * 0.01);
+          TotalMoney = TotalMoney + TotalMoney * (rate * 0.01);
+          document.write("Year = " + i +
+                         " Interest = " + Interest +
+                         " Value = " + TotalMoney + "<br>");
+        }
+        money = 0;
+        rate = 0;
+        year = 0;
+        Interest = 0;
+        TotalMoney = 0;
+        return "";
+      }
+    </script>
+  </head>
+  <body>
+    <script>
+      var again;
+      do {
+        document.write(futurevalue() + "<br>");
+        again = prompt("Bạn có muốn tiếp tục (y/n) ", "y");
+      } while (again == "y");
+    </script>
+    Thanks for using future value application!
+  </body>
+</html>
