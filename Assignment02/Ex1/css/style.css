@@ -1,0 +1,32 @@
+#skill{
+    margin: 2rem;
+    list-style-position: inside;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid gray;
+}
+.skill-item{
+    font-size: 180%;
+    color: blue;
+    font-weight: bold;
+    width: fit-content;
+    transition: .3s ease;
+    cursor: pointer;
+}
+.skill-item a{
+    margin-bottom: .5rem;
+    color: blue;
+    transition: .3s ease;
+}
+
+.skill-item:hover, .skill-item:hover a{
+    color: green;
+}
+#result{
+    font-size: 200%;
+}
+#result b{
+    color: green;
+}
+#result h2 span{
+    color: red;
+}

@@ -53,7 +53,5 @@ var calculateFV = function () {
     }
 };
 window.onload = function () {
-    $("calculate").onclick = function () {
-        calculateFV();
-    }
+    $("calculate").onclick = calculateFV;
 };

@@ -1,0 +1,131 @@
+#container {
+    width: 1000px;
+    margin: 20px auto;
+}
+
+
+#create h1 {
+    text-align: center;
+}
+
+#create button{
+    cursor: pointer;
+}
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group.left {
+    text-align: left;
+}
+
+.label {
+    display: inline-block;
+    width: 25%;
+    text-align: right;
+    margin-right: 2rem;
+}
+
+label.random, button {
+    margin-left: 31%;
+}
+
+input[type=number] {
+    width: 60%;
+    padding: 5px 3%;
+}
+
+#menu {
+    display: none;
+}
+
+#menu.active {
+    display: block;
+}
+
+#step2 {
+    text-align: center;
+}
+
+#step2 table {
+    width: 100%;
+}
+
+#step2 #control {
+    text-align: -moz-center;
+}
+
+#step2 #control button {
+    margin: 2rem 1rem;
+    cursor: pointer;
+}
+
+
+#skill {
+    margin: 2rem;
+    list-style-position: inside;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid gray;
+}
+
+.skill-item {
+    font-size: 180%;
+    color: blue;
+    font-weight: bold;
+    width: fit-content;
+    transition: .3s ease;
+    cursor: pointer;
+}
+
+.skill-item a {
+    margin-bottom: .5rem;
+    color: blue;
+    transition: .3s ease;
+}
+
+.skill-item:hover, .skill-item:hover a {
+    color: green;
+}
+
+#result {
+    font-size: 200%;
+    padding: 0 5%;
+}
+
+#result::after {
+    display: block;
+    clear: both;
+    content: '';
+}
+
+#result .print, #result .notice {
+    float: left;
+    width: 45%;
+}
+#result .notice{
+    padding-left: 2%;
+    min-height: 470px;
+    border-left: 1px solid black ;
+}
+#result b {
+    color: green;
+}
+
+#result h2 {
+    margin-top: 5px;
+}
+
+#result h2 span {
+    color: red;
+}
+
+#result table, #result tr, #result td {
+    font-size: 80%;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#result td {
+    padding: .5rem;
+    text-align: center;
+}

@@ -1,0 +1,49 @@
+#insert_name{
+    width: 70%;
+    margin: 1rem auto;
+    text-align: center;
+}
+#insert_name.invalid #fullname{
+    background-color: #fff1f1;
+    border-color: red;
+}
+#fullname{
+    width: 50%;
+    padding: .5rem 1rem;
+    margin-bottom: .5rem;
+    margin-right: 2rem;
+}
+button{
+    cursor: pointer;
+    padding: .5rem 1.5rem;
+    margin: .5rem 1.5rem;
+}
+#insert_name span {
+    color: red;
+}
+#result{
+    display: none;
+    margin-top: 2rem;
+    border-top: 1px solid black;
+    padding: 1rem;
+    font-size: 150%;
+}
+#result::after{
+    display: block;
+    clear: both;
+    content: '';
+}
+#result.active{
+    display: block;
+}
+#before, #after{
+    float: left;
+    width: 40%;
+    padding: 0 4.5%;
+}
+#after{
+    border-left: 1px solid black;
+}
+#after b{
+    background-color: yellow;
+}

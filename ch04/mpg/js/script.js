@@ -40,17 +40,11 @@ var calculateMPG = function () {
     }
 };
 var clearEntries = function () {
-    $("miles").value = '';
-    $("mpg").value = '';
-    $("gallons").value = '';
+    $("miles_per_gallon").reset();
     $("milesError").firstChild.nodeValue = '*';
     $("gallonsError").firstChild.nodeValue = '*';
 }
 window.onload = function () {
-    $("calculate").onclick = function () {
-        calculateMPG();
-    }
-    $('clear').onclick = function () {
-        clearEntries();
-    }
+    $("calculate").onclick = calculateMPG;
+    $('clear').onclick = clearEntries;
 };
