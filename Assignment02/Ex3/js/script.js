@@ -50,7 +50,37 @@ function sort() {
     return array;
 }
 
+function insert(){
+    var form = document.getElementById('insert_name');
+    var fullName = document.getElementById('fullname').value;
+    var isInsert = true;
+    if (fullName.trim() === '') {
+        isInsert = false;
+        form.classList.add('invalid')
+    }
+    if (isInsert) {
+        addHeadingResult();
+        listName[listName.length] = fullName.trim();
+        var listBefore = document.getElementById('list_before_sort');
 
+        // chú ý: ở đây không in trực tiếp mà sử dụng 2 vòng lặp tách biệt để in ra 2 mảng phân biệt trước và sau khi sắp xếp
+        // đề phòng trường hợp tái sử dụng lại mảng cũ
+        var listHTML = '';
+        for (let i = 0; i < listName.length; i++) {
+            listHTML += `<li>${listName[i]}</li>`
+        }
+        listBefore.innerHTML = listHTML;
+        var listAfterSort = sort();
+        var listAfter = document.getElementById('list_after_sort');
+        listHTML = '';
+        for (let i = 0; i < listAfterSort.length; i++) {
+            listHTML += `<li>${listAfterSort[i][0]} <b>${listAfterSort[i][1]}</b></li>`
+        }
+        listAfter.innerHTML = listHTML;
+        inputElement.value = '';
+        inputElement.focus();
+    }
+}
 window.onload = function () {
     resetBtn.onclick = function () {
         var resultBox = document.getElementById('result');
@@ -65,36 +95,10 @@ window.onload = function () {
             form.classList.remove('invalid')
         }
     }
-    insertBtn.onclick = function (e) {
-        var form = document.getElementById('insert_name');
-        var fullName = document.getElementById('fullname').value;
-        var isInsert = true;
-        if (fullName.trim() === '') {
-            isInsert = false;
-            form.classList.add('invalid')
-        }
-        if (isInsert) {
-            addHeadingResult();
-            listName[listName.length] = fullName.trim();
-            var listBefore = document.getElementById('list_before_sort');
-
-            // chú ý: ở đây không in trực tiếp mà sử dụng 2 vòng lặp tách biệt để in ra 2 mảng phân biệt trước và sau khi sắp xếp
-            // đề phòng trường hợp tái sử dụng lại mảng cũ
-            var listHTML = '';
-            for (let i = 0; i < listName.length; i++) {
-                listHTML += `<li>${listName[i]}</li>`
-            }
-            listBefore.innerHTML = listHTML;
-            var listAfterSort = sort();
-            var listAfter = document.getElementById('list_after_sort');
-            listHTML = '';
-            for (let i = 0; i < listAfterSort.length; i++) {
-                listHTML += `<li>${listAfterSort[i][0]} <b>${listAfterSort[i][1]}</b></li>`
-            }
-            listAfter.innerHTML = listHTML;
-            inputElement.value = '';
-            inputElement.focus();
-        }
+    insertBtn.onclick = insert;
+    document.getElementById('insert_name').onsubmit = function (e) {
+        e.preventDefault();
+        insert();
     }
 }
 

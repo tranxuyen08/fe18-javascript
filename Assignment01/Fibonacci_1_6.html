@@ -6,13 +6,13 @@
 </head>
 <body>
 <script>
-    var fibinaci = [1, 1];
+    var fibinaci = [0, 1];
     document.write('<h1>The first 20 Fibonacci numbers:</h1>')
+    document.write('F0 = 0<br/>');
     document.write('F1 = 1<br/>');
-    document.write('F2 = 1<br/>');
-    for (let i = 3; i <= 20; i++) {
+    for (let i = 2; i < 20; i++) {
         fibinaci.push(fibinaci[fibinaci.length - 1] + fibinaci[fibinaci.length - 2]);
-        document.write('F' + i + ' = ' + fibinaci[i - 1] + '<br/>');
+        document.write('F' + i + ' = ' + fibinaci[i] + '<br/>');
     }
 </script>
 </body>

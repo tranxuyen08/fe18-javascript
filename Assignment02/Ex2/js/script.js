@@ -37,8 +37,11 @@ function read() {
         var row = [];
         for (let j = 0; j < cols; j++) {
             var value = 0;
-            if (inputData[index].value !== '') {
+            if (inputData[index].value !== '' && inputData[index].value >= 0) {
                 value = Number(inputData[index].value);
+            }
+            if (inputData[index].value > ((rows + cols) * 10)) {
+                value = (rows + cols) * 10;
             }
             index++;
             row.push(value);
