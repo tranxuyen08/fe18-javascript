@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Miles Per Gallon</title>
+    <link type="text/css" rel="stylesheet" href="styles.css" />
+    <script type="text/javascript" src="main.js"></script>
+</head>
+<body>
+    <main>    
+        <h1>Calculate Miles Per Gallon</h1>
+        <form id="mpgform" method="" action="">
+            <label for="miles">Miles Driven:</label>
+            <input type="text" id="miles" name="miles" />
+            <span id="milesError">*</span><br />
+
+            <label for="gallons">Gallons of Gas Used:</label>
+            <input type="text" id="gallons" name="gallons" />
+            <span id="gallonError">*</span><br />
+
+            <label for="mpg">Miles Per Gallon:</label>
+            <input disabled type="text" id="mpg" name="Miles Per Gallon" /><br />
+            <input type="button" id="calculator" value="Calculator MPG" />
+            <input type="reset" value="Clear Entries" />
+        </form>
+    </main>    
+</body>
+</html>
