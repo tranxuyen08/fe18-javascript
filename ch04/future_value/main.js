@@ -9,6 +9,7 @@ var calculatormpg = function () {
   var rate = $("rate").value;
   rate = parseFloat(rate);
   var year = $("year").value;
+  $("futurevalue").value = "";
   var isValid = true;
 
   // data validation
