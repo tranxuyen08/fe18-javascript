@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+    <script>
+        var student = {
+            studentCode:"", 
+            studentName:"",
+            studentAge: "",
+            studentSex: "",
+            
+        }
+        var check= false;
+        students = [];
+        function intput(){
+            var object =student;
+            object.studentCode=prompt('enter Student code: ');
+          
+            object.studentName=prompt('enter Student name: ');
+            object.studentAge=prompt('enter Student Age: ');
+            object.studentSex=prompt('enter Student sex(1:male/0:female): ');
+           return object;
+
+        }
+       
+        do{ 
+            check= false;
+            students.push(intput());
+            s = prompt("if you stop enter student,please enter Esc: ")
+           if (s ==null){
+               check =true;
+           }
+        }
+        while(check==false)
+       
+    </script>
+</head>
+<body>
+    <script>
+         var count =1;  
+       students.forEach(student => {
+           document.writeln("student "+ count+"<br>");
+           count++;
+           document.writeln("student Code: "+ student.studentCode+"<br>");
+           document.writeln("student name: "+ student.studentName +"<br>");
+           document.writeln("student age: "+ student.studentAge +"<br>");
+           if ( object.studentSex==1){
+           document.writeln("student sex: "+ 'male' +"<br>");
+           }else{
+            document.writeln("student sex: "+ 'female' +"<br>");
+           }
+       });
+    </script>
+</body>
+</html>

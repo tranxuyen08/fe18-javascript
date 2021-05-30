@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rank</title>
+    <script>
+        var points;
+        var check =false;
+        var rank;
+        do {
+            check =false;
+            points = prompt("enter your three numbers as math, physics, and chemistry: ");
+            points = points.split(' ');
+            console.log(points);
+            points.forEach(function(x){
+               
+                if(parseFloat(x)<0 ||  parseFloat(x)>10){
+                  
+                    check =true;
+                }
+            });
+            if(points.length!=3){
+                check =true;
+            }
+        }
+        while(check==true){
+            sum =points.reduce(function(a,b){return parseFloat(a)+ parseFloat(b)},0);
+            averager = (sum/3).toFixed(2);
+            if (averager<5.0){
+                rank = 'D';
+            }
+            if (averager>= 5.0 && averager< 6.5 ){
+                rank = 'C';
+            }
+            if (averager>= 6.5 && averager< 8.0 ){
+                rank = 'B';
+            }
+            if (averager>= 8.0 ){
+                rank = 'A';
+            }
+        }
+       
+    </script>
+</head>
+<body>
+    <script>
+        document.write("average point: " + averager +"<br>" +
+                        'rank: '+ rank);
+    </script>
+</body>
+</html>

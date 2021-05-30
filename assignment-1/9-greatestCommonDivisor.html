@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>greatest Common Divisor</title>
+    <script>
+    
+        var a = parseInt(prompt('enter a: '));
+        var b = parseInt(prompt('enter b: '));
+        Ucc = 0;
+        for (var i = 0;i<=Math.min(a,b);i++){
+           
+                if (a%i==0 && b%i==0){
+                    Ucc =i;
+                }
+            
+        }
+        alert('greatest Common Divisor is : '+ Ucc)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>equation Ax+ B = 0</title>
+    <script>
+         var check ;
+         var x;
+        do{
+            check =false;
+            temp = prompt("enter A and b in equation Ax + b = 0: ").split(" ");
+            temp.forEach(element => {
+               if (isNaN(element)){
+                   check = true;
+               } 
+            });
+            if (temp.length!= 2)
+              check =true;
+         }
+         while(check==true)
+         {
+             if (temp[0]==0){
+                x = 'the equation has no solution';
+             }
+             else{
+                 x = -temp[1]/-temp[0];
+                 
+             }
+         }
+    </script>
+</head>
+<body>
+    <script>
+        document.write("equation Ax+ B = 0 has solution is: <br>"
+        + x);
+    </script>
+</body>
+</html>

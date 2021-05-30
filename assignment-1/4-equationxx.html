@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>equation ax2 + bx + c =0 </title>
+    <script>
+         var check ;
+         var x;
+        do{
+            check =false;
+            temp = prompt("enter a,b and c in equation ax2 + bx + c =0 : ").split(" ");
+            temp.forEach(element => {
+               if (isNaN(element)){
+                   check = true;
+               } 
+            });
+            if (temp.length!= 3)
+              check =true;
+         }
+         while(check==true)
+         {
+             var delta = temp[1]**2 -4 *temp[0]*temp[2];
+             if (delta<0){
+                x = 'the equation has no solution';
+             }
+             else{
+                 if (delta ==0){
+                     x = -temp[1]/(2*temp[0]);
+                 }
+                 else{
+                    x = new Array( (-temp[1] + Math.sqrt(delta))/(2*temp[0]).toFixed(3),(-temp[1] - Math.sqrt(delta))/(2*temp[0]).toFixed(3))  
+                 }
+             }
+         }
+    </script>
+</head>
+<body>
+    <script>
+        document.write("equation ax2 + bx + c =0 has solution is: <br>"
+        + x);
+    </script>
+</body>
+</html>

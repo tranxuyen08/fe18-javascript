@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>print to screen first 20 numbers of Fibonacci numbers.</title>
+    <script>
+        arr = [];
+        function fibonaci(n){
+            if (n<=2)
+            return 1;
+            else{
+                return fibonaci(n-1) + fibonaci(n-2);
+            }
+        }
+        for(var i = 1 ; i<=20 ;i++){
+            arr.push(fibonaci(i));
+
+        }
+    </script>
+</head>
+<body>
+<script>
+    document.write("first 20 numbers of Fibonacci numbers: " + arr)
+</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="./css/register.css">
+</head>
+<body>
+    <div class="form">
+        <form action="./FAQs.html" id="form-1">
+            <div class="form__group">
+                <h2 class="form__title">Register for an Account</h2>
+            </div>
+            <div class="form__group">
+                <label for="">E-mail: </label>
+                <input type="text" name="email" id="email" >
+                <span class="form__message"></span>
+            </div>
+            <div class="form__group">
+                <label for="">Mobile Phone: </label>
+                <input type="text" name="phone" id="phone">
+                <span class="form__message"></span>
+            </div>
+            <div class="form__group">
+                <label for="">Contry: </label>
+                <select name="" id="contry">
+                    <option value="Vn">Viet Nam</option>
+                    <option value="China">China</option>
+                </select>
+            </div>
+            <div class="form__group">
+                <label for="">Contact me by: </label>
+                <input type="radio" name="contact" value="text">Text
+                <input type="radio" name="contact" value="email">Email
+                <input type="radio" name="contact" value="Mobile phone">Mobile Phone
+                <input type="radio" name="contact" value="don't contact me" checked>Don't contact me
+            </div>
+            <div class="form__group">
+                <label for="">Terms of Service: </label>
+                <input type="checkbox" id="check-accept"> I accept
+                <span class="form__message"></span>
+            </div>
+            <div class="form__group">
+                <label for="">Comments: </label>
+                <textarea name="commnent" id="commnent" cols="30" rows="10"></textarea>
+            </div>
+            <div class="form__group">
+                <button class="resgister">Register</button>
+                <button class="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+    <script src="./js/Register.js"></script>
+    <script>
+        Valid({
+            form: "#form-1",
+            submit: ".resgister",
+            reset:".reset",
+            rules: [
+                Valid.isRequried("#email"),
+                Valid.isRequried("#phone"),
+                Valid.isEmail('#email')
+                //Valid.isCheckAccept('#check-accept')
+            ]
+        })
+    </script>
+</body>
+</html>
