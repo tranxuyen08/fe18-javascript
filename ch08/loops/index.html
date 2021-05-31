@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      label {
+        display: inline-block;
+        width: 200px;
+        margin-top: 10px;
+      }
+      textarea {
+        margin-top: 10px;
+      }
+      textarea,
+      input {
+        width: 400px;
+      }
+      button {
+        display: inline-block;
+        margin-top: 10px;
+        margin-left: 300px;
+      }
+      span {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <h1>Find Prime Numbers</h1>
+      <p>
+        Enter any a number to find out how many prime numbers there are up to
+        and including that value
+      </p>
+      <label for="number">Enter Number</label>
+      <input type="text" id="number" name="number" />
+      <span id="numberError">*</span>
+      <br />
+      <label for="count">Prime Count</label>
+      <input type="text" id="count" name="count" disabled />
+      <br />
+      <label for="primenumber">Prime Numbers</label>
+      <textarea
+        name="primenumber"
+        id="primenumber"
+        cols="30"
+        rows="5"
+        disabled
+      ></textarea>
+      <br />
+      <button type="button" id="calculate">Calculate</button>
+    </form>
+    <script src="./main.js"></script>
+  </body>
+</html>

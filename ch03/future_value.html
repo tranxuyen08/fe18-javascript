@@ -7,33 +7,33 @@
     <title>Document</title>
     <script>
       function futurevalue() {
-        var money = prompt("Enter Investment amount = ", 10000);
+        var money = prompt('Enter Investment amount = ', 10000);
         money = parseFloat(money);
-        var rate = prompt("Enter Interest rate = ", 7.5);
+        var rate = prompt('Enter Interest rate = ', 7.5);
         rate = parseFloat(rate);
-        var year = prompt("Enter Years = ", 5);
+        var year = prompt('Enter Years = ', 5);
         year = parseInt(year);
         document.write(
-          "Investment amount = " +
+          'Investment amount = ' +
             money +
-            " Interest rate = " +
+            ' Interest rate = ' +
             rate +
-            " Years = " +
+            ' Years = ' +
             year +
-            "<br>"
+            '<br>'
         );
         var TotalMoney = money;
         for (var i = 1; i <= year; i++) {
           var Interest = TotalMoney * (rate * 0.01);
           TotalMoney = TotalMoney + TotalMoney * (rate * 0.01);
           document.write(
-            "Year = " +
+            'Year = ' +
               i +
-              " Interest = " +
+              ' Interest = ' +
               Interest +
-              " Value = " +
+              ' Value = ' +
               TotalMoney +
-              "<br>"
+              '<br>'
           );
         }
         money = 0;
@@ -41,7 +41,7 @@
         year = 0;
         Interest = 0;
         TotalMoney = 0;
-        return "";
+        return '';
       }
     </script>
   </head>
@@ -49,9 +49,9 @@
     <script>
       var again;
       do {
-        document.write(futurevalue() + "<br>");
-        again = prompt("Bạn có muốn tiếp tục (y/n) ", "y");
-      } while (again == "y");
+        document.write(futurevalue() + '<br>');
+        again = prompt('Bạn có muốn tiếp tục (y/n) ', 'y');
+      } while (again == 'y');
     </script>
     Thanks for using future value application!
   </body>
