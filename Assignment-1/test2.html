@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1">
+	<title>Exercise 2</title>
+    <script>
+        do {
+            var math;
+            var physics;
+            var chemistry;
+            var average;
+            var rank;
+            var continued;
+            math = prompt('Nhập điểm môn Toán');
+            math = parseInt(math);
+            physics = prompt('Nhập điểm môn Lý');
+            physics = parseInt(physics);
+            chemistry = prompt('Nhập điểm môn Hóa');
+            chemistry = parseInt(chemistry);
+
+            // validate
+            if (math < 0 || math > 10) {
+                alert('Hãy nhập điểm số hợp lệ');
+            }
+            else if (physics < 0 || physics > 10) {
+                alert('Hãy nhập điểm số hợp lệ');
+            }
+            else if (chemistry < 0 || chemistry > 10) {
+                alert('Hãy nhập điểm số hợp lệ');
+            } else {
+                average = (math + physics + chemistry) / 3;
+                // set rank
+                if (average < 5) {
+                    rank = 'D';
+                } else if (average < 6.5 && average >= 5) {
+                    rank = 'C';
+                } else if (average < 8 && average >= 6.5) {
+                    rank = 'B';
+                } else if (average >= 8) {
+                    rank = 'A';
+                }
+                alert('Điểm trung bình là:\n\n' + 'Average = ' + average.toFixed(1) + '\n' + 'Xếp hạng: ' + rank + '\n\n');
+            }
+            continued = prompt('Bạn muốn bắt đầu lại ?','y');
+        } while (continued == 'y');
+        
+    </script>
+</head>
+
+<body>
+    <main>        
+        <h1>Thanks for your using this application.</h1>
+    </main>
+</body>
+</html>

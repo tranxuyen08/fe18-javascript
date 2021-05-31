@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1">
+	<title>Exercise 9</title>
+    <script>
+        var looping;
+        do {
+            var a, b;
+            a = prompt("Nhập số nguyên a (a>0)");
+            a = parseInt(a);
+            b = prompt("Nhập số nguyên b (b>0)");
+            b = parseInt(b);
+            if (a < 0 || b < 0 || isNaN(a) || isNaN(b)) {
+                alert("Hãy nhập số hợp lệ");
+            } else {
+                do {
+                    if (a == b) {
+                        alert("Ước chung lớn nhất của 2 số vừa nhập là: " + a);
+                    } else {
+                        if (a > b) {
+                            a = a - b;
+                        } else {
+                            b = b - a;
+                        }
+                    }
+                } while (a != b);
+                alert("Ước chung lớn nhất của 2 số là: " + a);
+            }
+            looping = prompt("Bạn muốn nhập lại ?","y");
+        } while (looping == "y");
+        
+    </script>
+</head>
+
+<body>
+    <main>        
+        <h1>Thanks for your using this application.</h1>
+    </main>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1">
+	<title>Exercise 6</title>
+    <script>
+        var fibo = [];
+        var sum = 0;
+        var n = prompt('Nhap so tu nhien n de tinh day Fibonacci');
+        n = parseInt(n);
+        fibo[0] = 0;
+        fibo[1] = 1;
+        fibo[2] = 1;
+        for (var i=3; i <= n; i++) {
+            fibo[i] = fibo[i-1] + fibo[i-2];
+        }
+        for (var x=0; x <= n; x++) {
+            sum = sum + fibo[x];
+        }
+        alert('So hang thu ' + n + ' cua day Fibonacci la = ' + fibo[n] + '\n' + 
+        'Tong cua ' + n + ' so dau tien trong day Fibonacci la = ' + sum);
+    </script>
+</head>
+
+<body>
+    <main>        
+        <h1>Thanks for your using this application.</h1>
+    </main>
+</body>
+</html>

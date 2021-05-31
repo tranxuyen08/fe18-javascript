@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1">
+	<title>Exercise 3</title>
+    <script>
+        var a, b, x;
+        alert('App giải phương trình bậc nhất: ax + b = 0');
+        a = prompt('Nhập giá trị a');
+        a = parseInt(a);
+        b = prompt('Nhập giá trị b');
+        b = parseInt(b);
+
+        x = parseFloat(-b/a).toFixed(2);
+        if (a != 0) {            
+            alert('Phương trình có nghiệm duy nhất:\n\n' + 'x = ' + x + '\n\n');
+        } else if (a == 0 && b == 0) {
+            alert('Phương trình có vô số nghiệm!');
+        } else if (a == 0 && b != 0) {
+            alert('Phương trình vô nghiệm!');
+        }
+        
+    </script>
+</head>
+
+<body>
+    <main>        
+        <h1>Thanks for your using this application.</h1>
+    </main>
+</body>
+</html>

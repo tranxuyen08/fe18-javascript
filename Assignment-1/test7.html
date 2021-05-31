@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1">
+	<title>Exercise 7</title>
+    <script>
+        var looping;
+        do {
+            var studentCode = 0;
+            var studentName;
+            var studentAge;
+            var studentSex;
+            var student = [];
+            do {
+                var more;
+                studentCode++;
+                studentName = prompt("Nhập tên sinh viên");
+                studentAge = prompt("Nhập tuổi");
+                studentSex = prompt("Nhập giới tính");
+                student[studentCode] = studentName.concat("\n" + studentAge + " (tuổi)\n" + studentSex +"\n\n");
+                more = prompt("Bạn có muốn nhập sinh viên tiếp theo","y");
+            } while (more == "y");
+            var studentString = "";
+            for (var i = 1; i < student.length; i++) {
+                studentString = studentString + student[i];
+            }
+            alert("Thông tin các sinh viên như sau:\n\n" + studentString);
+            looping = prompt("Bạn muốn nhập lại ?","y");
+        } while (looping == "y");
+        
+    </script>
+</head>
+
+<body>
+    <main>        
+        <h1>Thanks for your using this application.</h1>
+    </main>
+</body>
+</html>
