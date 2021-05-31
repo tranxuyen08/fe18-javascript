@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fibonacci</title>
+    <meta charset="UTF-8">
+    <script>
+        var n = prompt("Nhập vao số N:");
+
+
+        function fibonacci(n) {
+
+            if (n < 0) {
+                return -1;
+            } else if (n == 0 || n == 1) {
+                return n;
+            } else {
+                return fibonacci(n - 1) + fibonacci(n - 2);
+            }
+        };
+        var result = "";
+        for (i = 0; i < n; i++) {
+            result = result + fibonacci(i) + ", ";
+        }
+        document.write('Fn' + i + ' = ' + result + '<br/>');
+    </script>
+
+</head>
+
+<body>
+
+
+</body>
+
+</html>

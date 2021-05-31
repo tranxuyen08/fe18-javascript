@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Swap a,b</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script>
+        "use strict";
+        var $ = function(id) {
+            return document.getElementById(id);
+        };
+        var a = prompt("Nhập vao số A:");
+        var b = prompt("Nhập vao số B:");
+
+        alert("Số chưa đảo:\n A" + a + "\n" + " B:" + b);
+
+        var temp = a;
+        a = b;
+        b = temp;
+
+
+        alert("Số đã đảo:\n A" + a + "\n" + "B:" + b);
+    </script>
+</head>
+
+<body>
+    <br>
+
+
+
+
+</body>
+
+</html>

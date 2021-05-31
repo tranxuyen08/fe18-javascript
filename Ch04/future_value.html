@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Future Value Calculator</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        html {
+            background-color: #fff;
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 100%;
+            width: 80%;
+            margin: 0px auto;
+        }
+        
+        header {
+            border: 3px solid black;
+            margin-left: 400px;
+            padding-top: 20px;
+            padding-left: 20px;
+        }
+        
+        label {
+            float: left;
+            width: 190px;
+            text-align: right;
+        }
+        
+        form input {
+            width: 200px;
+            margin-bottom: 10px;
+            padding: 3px;
+            margin-left: 10px;
+        }
+        
+        #caculatorform input[type="button"] {
+            margin-left: 200px;
+            width: 200px;
+        }
+        
+        #caculatorform span {
+            color: red;
+        }
+    </style>
+    <script src="js/value.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <h2>Future Value Calculator</h2>
+        <form id="caculatorform" action="a.html">
+            <label for="investment">Total Investment:</label>
+            <input type="text" id="investment" name="investment" />
+            <span id="investmentEr">*</span><br />
+
+            <label for="rate">Annual Interest Rate:</label>
+            <input type="text" id="rate" name="rate" />
+            <span id="rateEr">*</span><br />
+
+            <label for="year">Number of Year:</label>
+            <input type="text" id="year" name="year" />
+            <span id="yearEr">*</span><br />
+
+            <label for="futurevalue">Future Value:</label>
+            <input disabled type="text" id="future" name="future" />
+            <br />
+            <input type="button" id="calculate" value="Calculate" />
+        </form>
+
+    </header>
+
+
+</body>
+
+</html>
