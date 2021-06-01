@@ -139,8 +139,7 @@ var calculator = function () {
     FutureValue = investment;
     for (var i = 1; i <= year; i++) {
       if (FutureValue === Infinity) {
-        $('yearError').firstChild.nodeValue = 'Loop infinity';
-        FutureValue = '';
+        alert('Future value = ' + Infinity + '\n' + 'i = ' + i);
         break;
       } else {
         FutureValue += FutureValue * Rateper;
