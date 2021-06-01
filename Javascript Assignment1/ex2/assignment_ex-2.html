@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ <link rel="stylesheet" href="src/scss/style-validator.css ">
+</head>
+<body>
+ <form action="" method="POST" class="form" id="form-1">
+  <h3 class="heading">Tính điểm và xếp hạng</h3>
+  
+
+  <div class="spacer"></div>
+
+  <div class="form-group">
+    <label for="toan" class="form-label">Điểm Toán</label>
+    <input id="toan" name="toan" type="text" placeholder="Nhập điểm từ 1-10" class="form-control">
+    <span id="toanError"></span>
+  </div>
+
+  <div class="form-group">
+    <label for="hoa" class="form-label">Điểm Hóa</label>
+    <input id="hoa" name="hoa" type="text" placeholder="Nhập điểm từ 1-10" class="form-control">
+    <span id="hoaError"></span>
+  </div>
+
+  <div class="form-group">
+    <label for="ly" class="form-label">Điểm Lý</label>
+    <input id="ly" name="ly" type="text" placeholder="Nhập điểm từ 1-10" class="form-control">
+    <span id="lyError"></span>
+  </div>
+
+  <div class="form-group">
+    <label for="average" class="form-label">Điểm Trung Bình</label>
+    <input disabled id="average" name="average score" type="text" class="form-control">
+  </div>
+
+  <div class="form-group">
+   <label for="rank" class="form-label">Xếp Loại</label>
+   <input disabled id="rank" name="rank" type="text" class="form-control">
+ </div>
+  <input type="button" id="calculator" value="Tính toán">
+  
+</form>
+
+</body>
+<script src="src/js/assignment_ex-2.js"></script>
+</html>
