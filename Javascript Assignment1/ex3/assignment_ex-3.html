@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ <link rel="stylesheet" href="src/scss/style-validator.css ">
+</head>
+<body>
+ <form action="" method="POST" class="form" id="form-1">
+  <h3 class="heading">Giải phương trình bậc 1</h3>
+  
+
+  <div class="spacer"></div>
+
+  <div class="form-group">
+    <label for="a" class="form-label">Số a</label>
+    <input id="a" name="a" type="text" placeholder="Nhập số vào đây" class="form-control">
+    <span id="aError"></span>
+  </div>
+
+  <div class="form-group">
+    <label for="b" class="form-label">Số b</label>
+    <input id="b" name="b" type="text" placeholder="Nhập số vào đây" class="form-control">
+    <span id="bError"></span>
+  </div>
+
+  <div class="form-group">
+    <label for="x" class="form-label">X</label>
+    <input id="x" name="x" type="text" class="form-control" disabled>
+    <span id="xError"></span>
+  </div>
+
+  
+  <input type="button" id="calculator" value="Tính toán">
+  
+</form>
+
+<script>
+ const $ = (id) => document.getElementById(id)
+
+ calculator.onclick = () => {
+  let a = parseFloat($('a').value)
+  let b = parseFloat($('b').value)
+  let isValid = true
+
+  if(isNaN(a)) {
+   $('aError').innerHTML = 'Trường này phải là số';
+   isValid = false
+  } else {
+   $('aError').innerHTML = '';
+  }
+
+  if(isNaN(b)) {
+   $('bError').innerHTML = 'Trường này phải là số';
+   isValid = false
+  } else {
+   $('bError').innerHTML = '';
+  }
+
+  if (isValid === true) {
+   let x
+   if (a === 0) {
+    if (b === 0) {
+     x = 'Phương trình vô số nghiệm';
+    } else {
+     x = 'Phương trình vô nghiệm';
+    }
+   } else {
+    x = -b / a 
+    x = parseFloat(x).toFixed(3)
+   }
+   $('x').value = x;
+  }
+ }
+
+ //ax + b =0
+</script>
+</body>
+</html>
