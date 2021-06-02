@@ -14,12 +14,13 @@
 </head>
 <body style="white-space: pre;">
 <script>
-    for (let i = 1; i <= h; i++) {
-        for (let j = 0; j < (h - i); j++) {
-            document.write(' ');
-        }
-        for (let j = 1; j <= i; j++) {
-            document.write('*');
+    for (var i = 1; i <= h; i++) {
+        for (var j = 1; j <= h; j++) {
+            if (j <= h - i) {
+                document.write(' ');
+            } else {
+                document.write('*');
+            }
         }
         document.write('<br/>');
     }
