@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+     body {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  background-color: white;
+  width: 730px;
+  margin: 0 auto;
+  border: 3px solid blue;
+  padding: 0 2rem 1rem;
+  box-shadow: 3px 3px 3px #01019e;
+}
+h1 {
+  font-size: 150%;
+  color: blue;
+  margin-bottom: 1rem;
+}
+label {
+  float: left;
+  width: 14rem;
+}
+input {
+  width: 15rem;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+input[type="button"] {
+  margin-left: 15rem;
+  width: 150px;
+}
+    </style>
+  </head>
+  <body>
+    <h1>Future Value Calculator</h1>
+    <form id="FVform" method="" action="">
+      <label for="investment">Total Investment:</label>
+      <input type="text" id="investment" name="investment" />
+      <span id="investmentError">*</span><br />
+
+      <label for="rate">Annual Interest Rate:</label>
+      <input type="text" id="rate" name="rate" />
+      <span id="rateError">*</span><br />
+
+      <label for="year">Number of Year:</label>
+      <input type="text" id="year" name="year" />
+      <span id="yearError">*</span><br />
+
+      <label for="futurevalue">Future Value:</label>
+      <input disabled type="text" id="futurevalue" name="future value" />
+      <br />
+      <input type="button" id="calculator" value="Calculators" />
+      <p id="date"></p>
+    </form>
+    <script>
+     var $ = function (id) {
+  return document.getElementById(id);
+};
+var clear = function () {
+  $('investmentError').firstChild.nodeValue = '';
+  $('rateError').firstChild.nodeValue = '';
+  $('yearError').firstChild.nodeValue = '';
+};
+var getRandom = function (max) {
+  var random;
+  if (!isNaN(max)) {
+    random = Math.floor(Math.random() * max) + 1;
+  }
+  return random;
+};
+var format = function (futurevalue) {
+  futurevalue = futurevalue.toString();
+  var dotlocation = futurevalue.indexOf('.');
+  var cents = futurevalue.substring(dotlocation + 1, dotlocation + 3);
+  var hundred = futurevalue.substring(dotlocation - 3, dotlocation);
+  var thousand = '';
+  var millions = '';
+  if (dotlocation < 6) {
+    thousand = futurevalue.substring(0, dotlocation - 3);
+    millions = '';
+  } else {
+    thousand = futurevalue.substring(dotlocation - 6, dotlocation - 3);
+    millions = futurevalue.substring(0, dotlocation - 6);
+  }
+  var formatFuture = '';
+  if (dotlocation >= 7) {
+    formatFuture =
+      '$ ' + millions + ',' + thousand + ',' + hundred + '.' + cents;
+  } else if (dotlocation > 3) {
+    formatFuture = '$ ' + thousand + ',' + hundred + '.' + cents;
+  } else if (dotlocation > 0) {
+    formatFuture = '$ ' + hundred + '.' + cents;
+  } else if (dotlocation === 0) {
+    formatFuture = '$ ' + '0' + '.' + cents;
+  }
+  return formatFuture;
+};
+
+
+  var getday = function () {
+  var currentDay = new Date();
+  var month = currentDay.getMonth() + 1;
+  var day = currentDay.getDate();
+  var year = currentDay.getFullYear();
+  var hours = currentDay.getHours();
+  var minutes = currentDay.getMinutes();
+  if (month < 10) {
+    month = '0' + month;
+  }
+  if (day < 10) {
+    day = '0' + day;
+  }
+  if (minutes < 10) {
+    minutes = '0' + minutes;
+  }
+  var Daystr = 'Today is ' + month + '/' + day + '/' + year;
+  Daystr += ' at ' + hours + ':' + minutes;
+  return Daystr;
+};
+var calculator = function () {
+  // get value
+  clear();
+  var investment = $('investment').value;
+  var rate = $('rate').value;
+  var year = $('year').value;
+  $('futurevalue').value = '';
+  var isValid = true;
+  if (investment === '' && rate === '' && year === '') {
+    investment = getRandom(50000);
+    rate = getRandom(15);
+    year = getRandom(50);
+  }
+  if (investment === '') {
+    $('investmentError').firstChild.nodeValue = 'bad data type';
+    isValid = false;
+  } else {
+    if (isNaN(investment)) {
+      $('investmentError').firstChild.nodeValue = 'bad data type';
+      isValid = false;
+    } else {
+      investment = parseFloat(investment);
+      if (investment <= 0) {
+        $('investmentError').firstChild.nodeValue = 'bad data type';
+        isValid = false;
+      } else {
+        isValid = true;
+      }
+    }
+  }
+  if (rate === '') {
+    $('rateError').firstChild.nodeValue = 'bad data type';
+    isValid = false;
+  } else {
+    if (isNaN(rate)) {
+      $('rateError').firstChild.nodeValue = 'bad data type';
+      isValid = false;
+    } else {
+      rate = parseFloat(rate);
+      if (rate <= 0) {
+        $('rateError').firstChild.nodeValue = 'bad data type';
+        isValid = false;
+      } else {
+        isValid = true;
+      }
+    }
+  }
+  if (year === '') {
+    $('yearError').firstChild.nodeValue = 'bad data type';
+    isValid = false;
+  } else {
+    if (isNaN(year)) {
+      $('yearError').firstChild.nodeValue = 'bad data type';
+      isValid = false;
+    } else {
+      year = parseFloat(year);
+      if (year <= 0) {
+        console.log('lỗi');
+        $('yearError').firstChild.nodeValue = 'bad data type';
+        isValid = false;
+      } else {
+        isValid = true;
+      }
+    }
+  }
+  if (isValid === true) {
+    investment = parseFloat(investment);
+    rate = parseFloat(rate);
+    year = parseInt(year);
+    var FutureValue;
+    var Rateper = rate * 0.01;
+    FutureValue = investment;
+    for (var i = 1; i <= year; i++) {
+      if (FutureValue === Infinity) {
+        alert('Future value = ' + Infinity + '\n' + 'i = ' + i);
+        break;
+      } else {
+        FutureValue += FutureValue * Rateper;
+      }
+    }
+    console.log(FutureValue);
+    if (FutureValue !== '') {
+      FutureValue = FutureValue.toFixed(2);
+    }
+    var fmfuture = format(FutureValue);
+    console.log(fmfuture);
+    $('futurevalue').value = fmfuture;
+  }
+};
+
+window.onload = function () {
+  $('calculator').onclick = calculator;
+  $('date').textContent = getday();
+};
+    </script>
+  </body>
+</html>
