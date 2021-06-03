@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1">
+	<title>Exercise 10</title>    
+</head>
+<style>
+    html {
+        font-family: monospace;
+    }
+    body {
+        width: 80%;
+        margin: auto;
+        margin-top: 30px;
+        font-size: 120%;
+    }
+</style>
+<body>
+    <script>
+        var n = prompt("Nhập vào số nguyên n bất kì");
+        n = parseInt(n);
+        var starString = "";
+        document.write("N = " + n + "<br><br>");
+        for (var i=0; i < n; i++) {
+            for (var j=0; j <= i; j++) {
+                starString += "*";
+            }
+            starString += "<br>";
+        }
+        document.write(starString);
+    </script>
+    <main>
+        <h3>Thanks for your using this application.</h3>
+    </main>
+</body>
+</html>

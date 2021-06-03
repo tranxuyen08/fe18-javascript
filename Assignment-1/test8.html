@@ -6,7 +6,39 @@
 	<meta name="viewport" content="width=device-width initial-scale=1">
 	<title>Exercise 8</title>
     <script>
-        
+        var n = prompt("Nhập giá trị n ( từ 1->12 )");        
+        switch (n) {
+            case "1":
+            case "3":
+            case "5":
+            case "7":
+            case "8":
+            case "10":
+            case "12":
+                {
+                    alert("Số ngày của tháng là 31");
+                    break;
+                }
+            case "4":
+            case "6":
+            case "9":
+            case "11":
+                {
+                    alert("Số ngày trong tháng là 30");
+                    break;
+                }
+            case "2":
+            {
+                var thisYear = new Date();
+                    thisYear = thisYear.getFullYear();
+                if (thisYear % 4 == 0) {
+                    alert("Số ngày trong tháng là 29");
+                } else {
+                    alert("Số ngày trong tháng là 28");
+                }
+                break;
+            }
+        }        
         
     </script>
 </head>

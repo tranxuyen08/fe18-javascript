@@ -19,6 +19,7 @@
                 studentName = prompt("Nhập tên sinh viên");
                 studentAge = prompt("Nhập tuổi");
                 studentSex = prompt("Nhập giới tính");
+                
                 student[studentCode] = studentName.concat("\n" + studentAge + " (tuổi)\n" + studentSex +"\n\n");
                 more = prompt("Bạn có muốn nhập sinh viên tiếp theo","y");
             } while (more == "y");
