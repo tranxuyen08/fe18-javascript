@@ -1,0 +1,11 @@
+body{
+    width: 60%;
+    border: 2px solid blue;
+    margin: 0 auto;
+    padding: 20px;
+}
+label{
+    min-width: 200px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
