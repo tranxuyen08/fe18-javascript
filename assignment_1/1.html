@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var a;
+        var b;
+        var c;
+        var $ = function(){
+        a = 4;
+        b = 8;
+        document.write("giá trị ban đầu:<br>" + "a = " + a + "<br>" + "b = " + b + "<br>");
+        c = a;
+        a = b;
+        b = c;
+        document.write("giá trị sau khi thay đổi:<br>" + "a = " + a + "<br>" + "b = " + b);
+        }
+    </script>
+</head>
+<body>
+    <script>
+        $();
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label{
+            width: 100px;
+            float: left;
+            text-align: right;
+            margin-right: 1em;
+        }
+        input{
+            margin-bottom: 1em;
+        }
+    </style>
+
+    
+    <script>
+        var $=function(id){
+            return document.getElementById(id);
+        }
+
+        function greatCommonDivisor(a,b){
+            var a = parseFloat($("a").value);
+            var b = parseFloat($("b").value);
+            var c;
+            for(var i=1;i<=a;i++){
+                if(a%i==0 && b%i==0){
+                    c=i;
+                }
+            }
+            return $("c").value = c;
+    }
+        window.onload = function(){
+            $("run").onclick = greatCommonDivisor;
+            $("a").focus();
+        }
+    </script>
+    
+</head>
+<body>
+    <label for="a">Số a: </label>
+    <input type="text" id="a"><br>
+    <label for="b">Số b: </label>
+    <input type="text" id="b">
+    <br><br>
+    <label for="c">UCLN: </label>
+    <input type="text" id="c" disabled><br>
+    <label for="">&nbsp;</label>
+    <input type="button" id="run" value="Run">
+
+
+</body>
+</html>

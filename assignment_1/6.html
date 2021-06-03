@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fibonacci(){
+            var a=0;
+            var b=1;
+            var assign;
+            var fbn = [0,1];
+
+            do{
+                assign = a+b;
+                a = b;
+                b = assign;
+                fbn.push(assign);
+            }
+            while(fbn.length<=50);
+            document.write("50 số đầu tiên của dãy số Fibonacci: " + fbn);
+        }
+
+        fibonacci();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        alert("Giải phương trình ax + b = 0.");
+        
+        do{
+            var a = prompt("hệ số a =");
+                a = parseFloat(a);
+            if(a==0){
+             alert("please re-enter.(a != 0)");
+             var valid = false;
+        }
+        else{
+            valid = true;
+        }
+        }
+        while(valid==false);
+
+        var b = prompt("hệ số b =");
+            b = parseFloat(b);
+        var x = (-b)/a;
+        x = x.toFixed(2);
+        alert("nghiệm của phương trình là: x = " + x);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
