@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Average and Rank</title>
+    </head>
+    <body>
+        <script>
+            var average = 0;
+            var rank;
+        do {
+            var math = prompt("Enter math test scores(0 - 10)")
+            } while (isNaN(math) || math < 0 || math > 10);
+        do {
+            var physics = prompt("Enter physics test scores(0 - 10)")
+            } while (isNaN(physics) || math < 0 || math > 10);
+        do {
+            var chemistry = prompt("Enter chemistry test scores(0 - 10)")
+            } while (isNaN(chemistry) || math < 0 || math > 10);
+            average = ((parseFloat(math) + parseFloat(physics) + parseFloat(chemistry)) / 3).toFixed(1);
+
+        if (average >= 8) {
+            rank = 'A';
+        } else if (average >= 6.5) {
+            rank = 'B';
+        } else if (average >= 5) {
+            rank = 'C';
+        } else {
+            rank = 'D';
+        }
+            document.write('Math scores: ' + math + '<br/>');
+            document.write('Physics scores: ' + physics + '<br/>');
+            document.write('Chemistry scores: ' + chemistry + '<br/>');
+            document.write('Average scores: ' + average + '<br/>');
+            document.write('Rank: ' + rank);
+        </script>
+    </body>
+</html>
