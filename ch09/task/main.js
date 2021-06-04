@@ -78,8 +78,15 @@ var filtertList = function () {
     displaySortedTaskList(tasks, $('list-task'), deleteFromTaskList);
   } else {
     var arr = filterTaskList(task);
-    displaySortedTaskList(arr, $('list-task'), deleteFromTaskList);
-    $('task').value = '';
+    if (arr.length > 0) {
+      displaySortedTaskList(arr, $('list-task'), deleteFromTaskList);
+      $('task').value = '';
+    } else {
+      $(
+        'list-task'
+      ).innerHTML = `<p>Không tìm thấy ${task} (Nhận lại nút filter task để show toàn bộ task)</p>`;
+      $('task').value = '';
+    }
   }
 };
 window.onload = function () {
