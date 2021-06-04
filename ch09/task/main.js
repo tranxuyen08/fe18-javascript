@@ -67,9 +67,8 @@ var sortList = function () {
 };
 var filterTaskList = function (keyword) {
   var arr = tasks.filter(function (item) {
-    return item === keyword;
+    return item.trim().toLowerCase() === keyword.trim().toLowerCase();
   });
-
   return arr;
 };
 var filtertList = function () {
