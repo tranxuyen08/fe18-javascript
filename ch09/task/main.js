@@ -89,10 +89,28 @@ var filtertList = function () {
     }
   }
 };
+var deletaTask = function () {
+  var taskID = prompt('Nhập id task cần xoá! (ex: 1,2,3,4...)');
+  if (taskID === '') {
+    alert('please enter value!');
+  } else {
+    if (taskID <= tasks.length - 1 && taskID >= 0) {
+      deleteTask(tasks, taskID);
+      // update storage
+      setStorageItem(taskName, tasks);
+      // re-display tasks
+      displayTaskList();
+      $('task').focus();
+    } else {
+      alert('Task ID không tìm thấy');
+    }
+  }
+};
 window.onload = function () {
   $('add-task').onclick = addlocal;
   $('clear-task').onclick = clearTask;
   $('toggle-sort').onclick = sortList;
+  $('delete-task').onclick = deletaTask;
   $('filter-task').onclick = filtertList;
   $('task').focus();
 };
