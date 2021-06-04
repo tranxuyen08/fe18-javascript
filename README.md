@@ -1,3 +1,2 @@
-# fe18-javascript
-
-# Dương Quốc Vương
+JS FE18
+Dương Vương
