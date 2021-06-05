@@ -1,3 +1,4 @@
+// cách 1
 // function getMonthV() {
 //   var monthip;
 //   var getDaysInMonth = function (month) {
@@ -20,7 +21,7 @@
 //     }
 //   } while (monthip != 999);
 // }
-
+// cách 2
 function getMonthV() {
   var monthip;
   var dateCurrent = new Date();
