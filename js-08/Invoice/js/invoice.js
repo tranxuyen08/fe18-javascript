@@ -5,42 +5,42 @@ var $ = function(id) {
 };
 
 // determine Discount percent
-function discountPercent(type, subtotal) {
-    var percent = 0;
-    switch (type) {
-        case "General Customer": {
+function discountPercent(customerType, subtotal) {
+    var percentD = 0;
+    switch (customerType) {
+        case "1": {
             if (subtotal < 100) {
-                percent = 0;
+                percentD = 0;
             } else if (subtotal >= 100 && subtotal < 250) {
-                percent = 10;
+                percentD = 10;
             } else if (subtotal >= 250 && subtotal < 500) {
-                percent = 25;
+                percentD = 25;
             } else if (subtotal > 500) {
-                percent = 30;
+                percentD = 30;
             }
             break;
         }            
-        case "Golden Customer": {
-            percent = 35;
+        case "2": {
+            percentD = 35;
             break;
         }            
-        case "Platinum Customer": {
-            percent = (subtotal < 500) ? 40 : 50;
+        case "3": {
+            percentD = (subtotal < 500) ? 40 : 50;
             break;
         }            
     }
-    return percent;
+    return percentD;
 };
 
 // Main function
 function validateEntry() {
     var entry1_ok = false;
     var entry2_ok = false;
-    var type = $("type").value;
+    var customerType = $("type").value;
     var subtotal = parseFloat($("subtotal").value);
 
     // validate 2 input
-    if (type == "") {
+    if (customerType == "") {
         $("type-error").firstChild.nodeValue = "Please select an option below";
     } else {
         $("type-error").firstChild.nodeValue = "";
@@ -54,14 +54,14 @@ function validateEntry() {
         entry2_ok = true;
     }
 
-    var percent, amount, total;
-        percent = discountPercent(type, subtotal);
-        amount = subtotal*percent/100;
+    var percentD, amount, total;
+        percentD = discountPercent(customerType, subtotal);
+        amount = (subtotal * percentD)/100;
         total = subtotal - amount;
 
     // call the main function
     if ((entry1_ok && entry2_ok) == true) {        
-        $("percent").value = percent.toFixed(1);
+        $("percent").value = percentD.toFixed(1);
         $("amount").value = amount.toFixed(1);
         $("total").value = total.toFixed(1);
 
