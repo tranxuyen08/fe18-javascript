@@ -71,7 +71,10 @@ var sortList = function () {
 };
 var filterTaskList = function (keyword) {
   var arr = tasks.filter(function (item) {
-    return item.trim().toLowerCase() === keyword.trim().toLowerCase();
+    return (
+      item.trim().toLowerCase().indexOf(keyword.trim().toLowerCase()) !== -1
+    );
+    // item.trim().toLowerCase() === keyword.trim().toLowerCase()
   });
   return arr;
 };
