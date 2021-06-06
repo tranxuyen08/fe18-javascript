@@ -27,7 +27,12 @@ var displaySortedTaskList = function (tasks, divEle, deleteHandler) {
     }
   }
 };
-
+var setNameTask = function (tasks, i, text) {
+  var isArray = sortTaskList(tasks);
+  if (isArray) {
+    tasks[i] = text; // remove task number i out of task list
+  }
+};
 var deleteTask = function (tasks, i) {
   var isArray = sortTaskList(tasks);
   if (isArray) {

@@ -42,6 +42,7 @@ var deleteFromTaskList = function () {
   displayTaskList();
   $('task').focus();
 };
+
 // function showlocal() {
 //   var html = '';
 //   if (tasks.length === 0) {
@@ -105,11 +106,31 @@ var deletaTask = function () {
     }
   }
 };
+function setName() {
+  var taskID = prompt('Nhập id task cần setName! (ex: 1,2,3,4...)');
+  if (taskID === '') {
+    alert('please enter value!');
+  } else {
+    if (taskID <= tasks.length - 1 && taskID >= 0) {
+      do {
+        var text = prompt('Nhập name cần sửa!');
+        setNameTask(tasks, taskID, text);
+        setStorageItem(taskName, tasks);
+        // re-display tasks
+        displayTaskList();
+        $('task').focus();
+      } while (text === '');
+    } else {
+      alert('Task ID không tìm thấy');
+    }
+  }
+}
 window.onload = function () {
   $('add-task').onclick = addlocal;
   $('clear-task').onclick = clearTask;
   $('toggle-sort').onclick = sortList;
   $('delete-task').onclick = deletaTask;
   $('filter-task').onclick = filtertList;
+  $('set-name').onclick = setName;
   $('task').focus();
 };
