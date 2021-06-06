@@ -31,9 +31,11 @@
         margin: 0 15px;
         flex: 1;
       }
-      #list-task {
+      .box {
         flex: 1;
         margin: 0 15px;
+      }
+      #list-task {
         min-height: 150px;
         border: 1px solid #444;
       }
@@ -63,8 +65,10 @@
           <input type="button" id="filter-task" value="Filter task"></input>
         </div>
       </form>
-      <br />
-      <div name="list-task" id="list-task"></div>
+      <div class="box">
+        <span id="name">Mary's Task</span>
+        <div name="list-task" id="list-task"></div>
+      </div>
     </main>
     <script src="./libary_storage.js"></script>
     <script src="./libary_tasklist.js"></script>

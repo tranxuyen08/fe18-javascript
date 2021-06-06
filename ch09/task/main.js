@@ -64,7 +64,10 @@ var deleteFromTaskList = function () {
 // }
 var sortList = function () {
   sortTaskList(tasks);
+  setStorageItem(taskName, tasks);
+  // re-display tasks
   displayTaskList();
+  $('task').focus();
 };
 var filterTaskList = function (keyword) {
   var arr = tasks.filter(function (item) {
@@ -107,25 +110,19 @@ var deletaTask = function () {
   }
 };
 function setName() {
-  var taskID = prompt('Nhập id task cần setName! (ex: 1,2,3,4...)');
-  if (taskID === '') {
-    alert('please enter value!');
-  } else {
-    if (taskID <= tasks.length - 1 && taskID >= 0) {
-      do {
-        var text = prompt('Nhập name cần sửa!');
-        setNameTask(tasks, taskID, text);
-        setStorageItem(taskName, tasks);
-        // re-display tasks
-        displayTaskList();
-        $('task').focus();
-      } while (text === '');
-    } else {
-      alert('Task ID không tìm thấy');
-    }
+  var text = prompt('Nhập name cần sửa!');
+  if (text) {
+    sessionStorage.setItem('name', text);
+    let data = sessionStorage.getItem('name');
+    $('name').innerText = data;
   }
 }
+
 window.onload = function () {
+  // let data = sessionStorage.getItem('name');
+  // if (data) {
+  //   $('name').innerText = data;
+  // }
   $('add-task').onclick = addlocal;
   $('clear-task').onclick = clearTask;
   $('toggle-sort').onclick = sortList;
