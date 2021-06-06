@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Find Prime Numbers</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="Css/prime.css">
+
+    <script src="Js/prime.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <h1>Find Prime Numbers</h1>
+        <p>Enter any a number to find out how many prime numbers there are up to and including that value.</p>
+        <form action="primecalculate">
+            <label for="">Enter Number:</label>
+            <input type="text" id="number" name="number">
+            <span id="NumberError">*</span>
+            <br>
+            <label for="">Prime count:</label>
+            <input disabled type="text" id="prime" name="prime">
+            <br>
+            <label for="">Prime numbers:</label>
+            <textarea disabled name="pnumbers" id="pnumbers" cols="50" rows="5"></textarea>
+            <br>
+            <div id="button">
+                <input type="button" id="calculate" value="Calculate" />
+            </div>
+        </form>
+    </header>
+
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Month</title>
+    <meta charset="UTF-8">
+    <script>
+        var message = "";
+        var deft = "";
+        var month = prompt("Input Month");
+        if (month <= 0 || isNaN(month) || month > 12) {
+            alert("Month >=1 and <=12")
+        }
+
+        switch (month) {
+            case "1":
+                message = " Có 31 Ngày";
+                break;
+            case "2":
+                var year = prompt("Input Year");
+
+                if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+
+                    message = "Tháng 2 năm:" + " " + year + " có 29 ngày";
+
+                } else {
+
+                    message = "Tháng 2 năm:" + " " + year + " có 28 ngày";
+                }
+                break;
+
+            case "3":
+                message = "Có 31 Ngày";
+                break;
+            case "4":
+                message = "Có 30 Ngày";
+                break;
+            case "5":
+                message = "Có 31 Ngày";
+                break;
+            case "6":
+                message = "Có 30 Ngày";
+                break;
+            case "7":
+                message = "Có 31 Ngày";
+                break;
+            case "8":
+                message = "Có 31 Ngày";
+                break;
+            case "9":
+                message = "Có 30 Ngày";
+                break;
+            case "10":
+                message = "Có 31 Ngày";
+                break;
+            case "11":
+                message = "Có 30 Ngày";
+                break;
+            case "12":
+                message = "Có 31 Ngày";
+                break;
+            default:
+                message = "No value";
+                break;
+        };
+        document.write('Month : ' + month + '<br/>' + 'Day : ' + message + '<br/>')
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>
