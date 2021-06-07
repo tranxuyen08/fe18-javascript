@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Prime Numbers</title>
+    <style>
+        html{
+            font-size: 62.5%;
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            width: 100%
+    
+        }
+        form{
+            width: 60rem;
+            display: block;
+            margin: 20rem auto;
+            padding: 3rem;
+            border: 2px solid black;
+            box-shadow: 4px 4px 4px gray;
+        }
+        h1{
+            font-size: 4rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        p{
+            font-size: 1.6rem;
+        }
+        input{
+            width: 20rem;
+            font-size: 1.6rem;
+            outline: none;
+        }
+        label{
+            display: block;
+            padding-top: 1rem;
+            font-size: 1.6rem;
+            font-style: italic;
+            width: 15rem;
+            float: left;
+        }
+        .form__group{
+            padding-bottom: 2rem;
+        }
+    </style>
+    <script>
+
+      
+        function getPrimeNumber(){
+        
+            number = document.getElementById('number').value;
+            primeCount = document.getElementById('Prime-count').value;
+         
+        
+             var arr = []
+             var count =0;
+              
+             for( var i = 1;i<number;i++){
+                    count =0;
+                 for (var j = 1; j<= i;j++){
+                     if (i%j==0)
+                        {
+                            count ++;
+
+                        }
+                 }
+                 if (count == 2){
+                     arr.push(i);
+
+                 }
+                 if (arr.length == primeCount){
+                    
+                     break;
+                 }
+             }
+             
+            document.getElementById('prime-number').value = arr.join(" ") ;
+        }
+       
+    </script>
+</head>
+<body>
+        <form id="form-1" onsubmit="return false">
+            <h1>Find Prime Numbers</h1>
+            <p>Enter any a number include to find out how many prime numbers there are up to and including that value.
+
+            </p>
+            <div class="form__group">
+                <label for="number">Enter Number: </label>
+                <input type="text" name="number" id="number">
+            </div>
+            <div class="form__group">
+                <label for="Prime-count">Prime count: </label>
+                <input type="text" name="Prime-count" id="Prime-count">
+            </div>
+            <div class="form__group">
+                <label for="prime-number">Prime Numbers: </label>
+                <textarea name="prime-number" id="prime-number" cols="30" rows="2" disabled></textarea>
+            </div>
+            <input type="submit" onclick="getPrimeNumber()" id="submit">
+            
+        </form>
+</body>
+</html>

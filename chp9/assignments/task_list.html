@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <style>
+        html{
+            font-size: 62.5%;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 100%;
+        }
+        .task{
+            width: 50rem;
+            padding: 3rem;
+            border: 2px solid black;
+            box-shadow: 4px 4px 4px gray;
+            margin: 20rem auto;
+           
+        }
+        .task_list{
+            display: flex;
+        }
+        .task__left{
+            width: 50%;
+        }
+        .task__right{
+            width: 50%;
+        }
+        .task__btns{
+            padding-top: 2rem;
+        }
+        .task__btns input{
+            width: 9rem;
+            margin: 0.2rem;
+        }
+        label{
+            display: block;
+            width: 20rem;
+            font-size: 1.6rem;
+        }
+        h3{
+            font-size: 3rem;
+            margin: 0;
+            padding: 0;
+        }
+        .message{
+            font-size: 1.4rem;
+            color: red ;
+            padding: 0;
+            margin: 0;
+        }
+        .display_task{
+            display: block;
+            width: 20rem;
+            height: 15rem;
+            background-color: rgb(197, 194, 194);
+            border: 2px solid black;
+            padding: 1rem;
+            font-size: 1.6rem;
+        }
+    </style>
+    <script>
+         var task_list = []
+         function getTaskLocal(){
+            try{
+           task_list = (localStorage.getItem("task")).split('|'); 
+        }
+        catch{
+            localStorage.setItem("task",task_list.join("|"));
+        }
+         }
+        
+        function addTask(){
+            getTaskLocal();
+            task_list= task_list.filter(function(x){if (x!=' ') return x})  
+            check =true;
+            task = document.getElementById('task').value;
+            
+           for (var i=0;i<task_list.length;i++){
+        
+               if (task==task_list[i]){
+                  
+                document.getElementById('message').innerHTML = 'this task was in list!'
+                check= false;
+                break;
+               }
+           }
+           if (task==''){
+            document.getElementById('message').innerHTML = 'please fill out task!'
+                check= false;
+           }
+            
+            if (check==true){
+                task_list.push(task);
+                document.getElementById('message').innerHTML = ''
+                localStorage.setItem("task",task_list.join("|"));
+                document.getElementById('display_task').innerHTML = task_list.join("<br>");
+            }
+        }
+        function clearTask(){
+            getTaskLocal();
+            task_list =[];
+            try{
+                localStorage.removeItem('task');
+                document.getElementById('message').innerHTML = 'clear task!';
+            }
+            
+            catch{
+                document.getElementById('message').innerHTML = 'not list task for clear';
+            }
+            document.getElementById('display_task').innerHTML = task_list.join("<br>");
+           
+        }
+        function deleteTask(){
+            getTaskLocal();
+            task_list= task_list.filter(function(x){if (x!=' ') return x})  
+            check =true;
+            task = document.getElementById('task').value;
+            task_list=task_list.filter(function(x){
+                if(x!=task)
+                return x;
+                else
+                 check= false;
+            })
+        
+           if (task==''){
+            document.getElementById('message').innerHTML = 'please fill out task!'
+                check= false;
+           }
+            if(check == true){
+                document.getElementById('message').innerHTML = 'task is not in list!'
+            }
+            if (check==false){
+                document.getElementById('message').innerHTML = 'delete task success'
+                localStorage.setItem("task",task_list.join("|"));
+                document.getElementById('display_task').innerHTML = task_list.join("<br>");
+            }
+        }
+        function sortTask()
+        {
+            getTaskLocal();
+            task_list= task_list.filter(function(x){if (x!=' ') return x})  
+            task_list = task_list.sort();
+            document.getElementById('message').innerHTML = 'Sort list success!'
+            localStorage.setItem("task",task_list.join("|"));
+            document.getElementById('display_task').innerHTML = task_list.join("<br>");
+        }
+        function setName(){
+          
+
+            newName = document.getElementById('task').value;
+            sessionStorage.setItem('name',newName);
+            
+            document.getElementById('name').innerHTML = newName;
+        }
+        function taskImportant(){
+            return task_list.filter(function(x){if (x.toLowerCase().indexOf("important!",0)!=-1) return x});
+        }
+        function filterTasks(){
+            getTaskLocal();
+            list_import = taskImportant()
+            list_unimportant = task_list.filter(function(x){if (x.toLowerCase().indexOf("important!",0)==-1) return x});
+            list_unimportant.sort()
+            task_list = list_import.concat(list_unimportant);
+            document.getElementById('message').innerHTML = 'filter is success!'
+                localStorage.setItem("task",task_list.join("|"));
+                document.getElementById('display_task').innerHTML = task_list.join("<br>");
+        }
+        window.onload = function(){
+            getTaskLocal();
+            task_list= task_list.filter(function(x){if (x!=' ') return x}) ;
+            document.getElementById('display_task').innerHTML = task_list.join("<br>");
+            console.log(sessionStorage.getItem('name'))
+            if (sessionStorage.getItem('name')!=null || sessionStorage.getItem('name')!=undefined){
+                document.getElementById('name').innerHTML =sessionStorage.getItem('name');
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <div class="task">
+        <h3>Task Manager</h3>
+        <div class="task_list">
+            <div class="task__left">
+                <label for="task">Task</label>
+                <input type="text" name="task" id="task">
+                <p class="message" id="message"></p>
+                <div class="task__btns">
+                    <input type="button" value="Add Task" id="add_task" onclick="addTask()">
+                    <input type="button" value="Clear Tasks" id="clear_tasks" onclick="clearTask()">
+                    <input type="button" value="Delete Task" id="del_task" onclick="deleteTask()">
+                    <input type="button" value="Sort" id="sort_tasks" onclick="sortTask()">
+                    <input type="button" value="Set Name" id="set_name" onclick="setName()">
+                    <input type="button" value="Filter Tasks" id="filter_tasks" onclick="filterTasks()">
+                </div>
+            </div>
+            <div class="task__right">
+                <label for="display_task" ><span id="name">Mary</span>'s Tasks</label>
+              
+                <div class="display_task" id="display_task"></div>
+            </div>
+        </div>
+    </div>
+       
+</body>
+</html>

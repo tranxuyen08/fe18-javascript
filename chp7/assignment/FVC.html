@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Value Calculator</title>
+    <link rel="stylesheet" href="./css/FVC.css">
+</head>
+<body>  
+        <form action="" class="form">
+            <h1 class="form__title">Future Value Calculator</h1>
+            <div class="form__group">
+                <label for="">Total investment:</label>
+                <input type="text" id="inMoney">
+                <span class="Message"></span>       
+            </div>
+            <div class="form__group">
+                <label for="">Annual Interest Rate:</label>
+                <input type="text" id="Rate">%
+                <span class="Message"></span>
+            </div>
+            <div class="form__group">
+                <label for="">Number  of years:</label>
+                <input type="text" id="numberYears">
+                <span class="Message"></span>
+            </div>
+            <div class="form__group">
+                <label for="">Future value:</label>
+                <input type="text" id="outMoney" disabled>
+                <span class="Message"></span>
+            </div>
+            <div class="form__group">
+                <button id="caculator">Calculator</button>
+            </div>
+            <script>
+                time = new Date()
+                document.writeln('Today is '+ time.getDate()+'/'+time.getMonth()+"/" +time.getFullYear()+' at '+ time.getHours()+":"+time.getMinutes())
+            </script>
+        </form>
+        <script src="./js/check_FVC.js"></script>
+</body>
+</html>
