@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      a {
+        margin-right: 10px;
+        display: inline-block;
+        padding: 5px;
+      }
+      main {
+        width: 900px;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 30px;
+        display: flex;
+      }
+      form {
+        margin: 0 15px;
+        flex: 1;
+      }
+      .box {
+        flex: 1;
+        margin: 0 15px;
+      }
+      #list-task {
+        min-height: 150px;
+        border: 1px solid #444;
+      }
+      input:not(input[type='checkbox']) {
+        width: 100%;
+      }
+      .group-btn {
+        margin-top: 10px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <form action="">
+        <label for="task">Task</label>
+        <br />
+        <input type="text" id="task" />
+        <div class="group-btn">
+          <input type="button" id="add-task" value="Add task"></input>
+          <input type="button" id="clear-task" value="Clear task"></input>
+          <input type="button" id="delete-task" value="Delete task"></input>
+          <input type="button" id="toggle-sort" value="Toggle sort"></input>
+          <input type="button" id="set-name" value="Set name"></input>
+          <input type="button" id="filter-task" value="Filter task"></input>
+        </div>
+      </form>
+      <div class="box">
+        <span id="name">Mary's Task</span>
+        <div name="list-task" id="list-task"></div>
+      </div>
+    </main>
+    <script src="./library_storage.js"></script>
+    <script src="./library_tasklist.js"></script>
+    <script src="./main.js""></script>
+  </body>
+</html>
