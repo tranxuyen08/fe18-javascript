@@ -1,5 +1,8 @@
+var $ = function (id) {
+    return document.getElementById(id);
+};
 var arr = new Array(10);
-var resultElement = document.getElementById('result');
+var resultElement = null;
 for (let i = 0; i < 10; i++) {
     arr[i] = Math.floor(Math.random() * 50) + 1;
 }
@@ -9,15 +12,11 @@ function enforcement(newNode) {
 }
 
 function print() {
-
     var titleNode = '<h2>All the elements of the array:</h2>';
-    var listArr = '<div>';
-    for (let i = 0; i < arr.length; i++) {
-
-        listArr += `<b>N[${i}]</b> = ` + arr[i] + '; ';
-    }
-    listArr += '</div>';
-    enforcement(titleNode + listArr)
+    var listArr = arr.reduce(function (list, item, index) {
+        return list += `<b>N[${index}]</b> = ` + item + '; ';
+    }, '<div>') + '</div>';
+    enforcement(titleNode + listArr);
 }
 
 function search() {
@@ -45,10 +44,9 @@ function search() {
             notice.innerHTML = `The number <span>${key}</span> does not exist in the array!`;
             resultElement.appendChild(notice);
         } else {
-            notice.innerHTML = `The indices of the number <span>${key}</span> in the array: `;
-            for (let i = 0; i < exist.length; i++) {
-                notice.innerHTML += `<span>${exist[i]}</span>; `
-            }
+            notice.innerHTML = exist.reduce(function (html, item) {
+                return html += `<span>${item}</span>; `
+            }, `The indices of the number <span>${key}</span> in the array: `);
             resultElement.appendChild(notice);
         }
     }
@@ -63,7 +61,9 @@ function max() {
 }
 
 function sum() {
-    var sum = calculateSum();
+    var sum = arr.reduce(function (total, item) {
+        return total += item;
+    }, 0);
     print();
     var notice = document.createElement('h2');
     notice.innerHTML = `Sum of all elements in array is <span>${sum}</span>.`
@@ -71,7 +71,7 @@ function sum() {
 }
 
 function sort() {
-    var arrAfterSort = handleSort();
+    var arrAfterSort = handleSort(arr.slice());
     print();
     var notice = document.createElement('h2');
     notice.innerHTML = `Sorted array descending: `
@@ -79,14 +79,6 @@ function sort() {
         notice.innerHTML += `<span>${arrAfterSort[i]}</span>; `;
     }
     resultElement.appendChild(notice);
-}
-
-function calculateSum() {
-    var sum = 0;
-    for (let i = 0; i < arr.length; i++) {
-        sum += arr[i];
-    }
-    return sum;
 }
 
 function findMax() {
@@ -104,37 +96,26 @@ function handleSearch(key) {
         return false;
     } else {
         var index = [];
-        for (let i = 0; i < arr.length; i++) {
-            if (arr[i] == key) {
+        arr.forEach(function (item, i) {
+            if (item === key) {
                 index[index.length] = i;
             }
-        }
+        })
         return index;
     }
 }
 
-function handleSort() {
-    var array = copyArray();
-    for (let i = 0; i < array.length - 1; i++) {
-        var index = i;
-        for (let j = i + 1; j < array.length; j++) {
-            if (array[j] > array[index]) {
-                index = j;
-            }
-        }
-        if (index != i) {
-            var tmp = array[i];
-            array[i] = array[index];
-            array[index] = tmp;
-        }
-    }
-    return array;
+function handleSort(array) {
+    return array.sort(function (x, y) {
+        return y - x;
+    });
 }
 
-function copyArray() {
-    var array = new Array();
-    for (let i = 0; i < 10; i++) {
-        array.push(arr[i]);
-    }
-    return array;
+window.onload = function () {
+    resultElement = $('result');
+    $('print').onclick = print;
+    $('sort').onclick = sort;
+    $('sum').onclick = sum;
+    $('search').onclick = search;
+    $('max').onclick = max;
 }

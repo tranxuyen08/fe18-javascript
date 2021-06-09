@@ -82,13 +82,17 @@ btnNext.onclick = function () {
         showMenu();
     } else {
         document.getElementById('create').remove();
+
         var box = document.createElement('div');
+
         var title = document.createElement('h1');
         title.innerText = `Enter the value of the array (Default = 0; Max = ${(cols + rows) * 10})`;
         box.append(title);
+
         var tableInput = createTableInput(rows, cols);
         box.id = 'step2';
         box.append(tableInput);
+
         var control = document.createElement('div');
         control.id = 'control';
         control.innerHTML = `<button id="next">Confirm</button><button id="exit">Back</button><button id="auto">Auto input</button>`
@@ -117,16 +121,13 @@ function enforcement(newNode) {
 }
 
 function createTableResult(array) {
-    var table = '<table>';
-    for (let i = 0; i < array.length; i++) {
-        var row = '<tr>';
-        for (let j = 0; j < array[i].length; j++) {
-            row += `<td>${array[i][j]}</td>`;
-        }
-        table += row + '</tr>';
-    }
-    table += '</table>';
-    return table;
+    var table = array.reduce(function (html, rowItem) {
+        html += rowItem.reduce(function (htmlRow, item) {
+            return htmlRow += `<td>${item}</td>`;
+        }, '<tr>')
+        return html + '</tr>';
+    }, '<table>')
+    return table + '</table>';
 }
 
 function print() {
@@ -181,10 +182,10 @@ function search() {
             notice.innerHTML = `The number <span>${key}</span> does not exist in the array!`;
             resultElement.appendChild(notice);
         } else {
-            notice.innerHTML = `The indices of the number <span>${key}</span> in the array: `;
-            for (let i = 0; i < exist.length; i++) {
-                notice.innerHTML += `<span>${exist[i]}</span>; `
-            }
+            notice.innerHTML = exist.reduce(function (html, item) {
+                return html += `<span>${item}</span>; `
+            }, `The indices of the number <span>${key}</span> in the array: `);
+
             resultElement.appendChild(notice);
         }
     }
@@ -195,7 +196,7 @@ function sort() {
         return;
     }
     print();
-    var arrayAfterSort = handleSort();
+    var arrayAfterSort = handleSort(array2D);
     var table = createTableResult(arrayAfterSort);
     var title = `<h2>Sorted array ascending by row:</h2>`
     resultElement.innerHTML += `<div class="notice">${title + table}</div>`
@@ -203,13 +204,11 @@ function sort() {
 
 
 function calculateSum() {
-    var sum = 0;
-    for (let i = 0; i < array2D.length; i++) {
-        for (let j = 0; j < array2D[i].length; j++) {
-            sum += array2D[i][j];
-        }
-    }
-    return sum;
+    return array2D.reduce(function (total, item) {
+        return total += item.reduce(function (totalRow, item) {
+            return totalRow += item;
+        }, 0);
+    }, 0)
 }
 
 
@@ -219,11 +218,11 @@ function handleSearch(key) {
         if (!array2D[i].includes(key)) {
             continue;
         }
-        for (let j = 0; j < array2D[i].length; j++) {
-            if (array2D[i][j] == key) {
+        array2D[i].forEach(function (item, j) {
+            if (item === key) {
                 index[index.length] = `${i + 1}-${j + 1}`;
             }
-        }
+        })
     }
     if (index.length > 0) {
         return index;
@@ -231,35 +230,12 @@ function handleSearch(key) {
     return false;
 }
 
-function handleSort() {
-    var array = copyArray();
-    for (let i = 0; i < array.length; i++) {
-        for (let j = 0; j < array[i].length - 1; j++) {
-            var index = j;
-            for (let k = j; k < array[i].length; k++) {
-                if (array[i][k] < array[i][index]) {
-                    index = k;
-                }
-            }
-            if (index != j) {
-                var tmp = array[i][j];
-                array[i][j] = array[i][index];
-                array[i][index] = tmp;
-            }
-        }
-
+function handleSort(arr2D) {
+    var array = [];
+    for (let i = 0; i < arr2D.length; i++) {
+        array[i] = arr2D[i].slice().sort(function (a, b) {
+            return a - b;
+        });
     }
     return array;
-}
-
-function copyArray() {
-    var arr = new Array();
-    for (let i = 0; i < rows; i++) {
-        var row = new Array();
-        for (let j = 0; j < cols; j++) {
-            row.push(array2D[i][j])
-        }
-        arr.push(row);
-    }
-    return arr;
 }
