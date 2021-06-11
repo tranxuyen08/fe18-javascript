@@ -22,15 +22,10 @@ input {
   margin-left: 1rem;
   margin-bottom: 0.5rem;
 }
-#calculate{
-  margin-left: 15rem;
-}
 input[type="button"] {
-  width: 110px;
+  margin-left: 15rem;
+  width: 150px;
 }
 #today{
   font-weight: bold;
-}
-#future_value span{
-  color: red;
 }

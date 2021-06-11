@@ -8,33 +8,67 @@ var processEntries = function () {
     var investment = $("investment").value;
     var rate = $("rate").value;
     var years = $("years").value;
+    var isValid = true;
 
-    // create random data with invalid
-    if (isNaN(investment) || investment <= 0) {
-        investment = getRandomNumber(50000);
-        $("investment").value = investment;
-    }
-    if (isNaN(rate) || rate <= 0) {
-        rate = getRandomNumber(15);
-        $("rate").value = rate;
-    }
-    if (isNaN(years) || years <= 0) {
-        years = getRandomNumber(50);
-        $("years").value = years;
+    // data validation
+    if (isNaN(investment) || investment == '') {
+        $("investmentError").firstChild.nodeValue = "Investment must be numeric";
+        isValid = false;
+    } else if (investment <= 0 || investment > 100000) {
+        $("investmentError").firstChild.nodeValue = "Investment must be greater than zero and <= 100000";
+        isValid = false;
+    } else {
+        $("investmentError").firstChild.nodeValue = "";
     }
 
-    var futureValue = calculate(parseFloat(investment), parseFloat(rate), parseFloat(years));
-    if (futureValue !== undefined) {
-        $("result").value = formatFV(futureValue);
+    if (isNaN(rate) || rate == '') {
+        $("rateError").firstChild.nodeValue = "Rate must be numeric";
+        isValid = false;
+    } else if (rate <= 0 || rate > 15) {
+        $("rateError").firstChild.nodeValue = "Rate must be greater than zero and <= 15";
+        isValid = false;
+    } else {
+        $("rateError").firstChild.nodeValue = "";
+    }
+
+    if (isNaN(years) || years == '') {
+        $("yearsError").firstChild.nodeValue = "Years must be numeric";
+        isValid = false;
+    } else if (years <= 0) {
+        $("yearsError").firstChild.nodeValue = "Years must be greater than zero";
+        isValid = false;
+    } else {
+        $("yearsError").firstChild.nodeValue = "";
+    }
+
+    if (isValid) {
+        var futureValue = calculate(parseFloat(investment), parseFloat(rate), parseFloat(years));
+        if (futureValue !== undefined) {
+            $("result").value = formatFV(futureValue);
+        }
     }
 };
-
+var random = function () {
+    var investment = getRandomNumber(50000);
+    var rate = getRandomNumber(15);
+    var years = getRandomNumber(50);
+    var futureValue = calculate(investment, rate, years);
+    if (futureValue !== undefined) {
+        $("investment").value = investment;
+        $("investmentError").firstChild.nodeValue = "";
+        $("rateError").firstChild.nodeValue = "";
+        $("yearsError").firstChild.nodeValue = "";
+        $("rate").value = rate;
+        $("years").value = years;
+        $("result").value = formatFV(futureValue);
+    }
+}
 // calulate future value
 var calculate = function (investment, rate, years) {
     var futureValue = investment;
     for (var i = 1; i <= years; i++) {
         futureValue = futureValue + (futureValue * rate) / 100;
-        if (i === 1000 || futureValue === Infinity) {
+        if (futureValue === Infinity) {
             alert('Future value = ' + futureValue.toFixed(2) + "\ni = " + i);
             $("investment").focus();
             return;
@@ -74,5 +108,6 @@ function getDate() {
 window.onload = function () {
     $('today').innerText = getDate();
     $("calculate").onclick = processEntries;
+    $('ramdom').onclick = random;
     $("investment").focus();
 };
