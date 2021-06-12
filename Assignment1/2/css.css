@@ -1,0 +1,50 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  background-color: #fff;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  width: 50%;
+  margin: 0px auto;
+}
+
+header {
+  border: 3px solid aqua;
+  box-shadow: 6px 6px 6px aquamarine;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+h1 {
+  color: red;
+  font-size: 250%;
+}
+
+label {
+  float: left;
+  width: 190px;
+  text-align: right;
+}
+
+form input {
+  width: 200px;
+  margin-bottom: 10px;
+  padding: 3px;
+  margin-left: 10px;
+}
+
+input[type="button"] {
+  margin-left: 200px;
+  width: 300px;
+  color: blue;
+}
+
+#avga form span {
+  color: red;
+}
