@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager Application</title>
+    <link type="text/css" rel="stylesheet" href="Css/main.css" />
+    <script type="text/javascript" src="Js/task.js"></script>
+</head>
+
+<body>
+    <main>
+        <h1>Task Manager</h1>
+        <div id="tasks">
+            <label for="task_list" id="name">Mary's Tasks</label><br />
+            <textarea id="task_list" name="task_list" rows="6"></textarea>
+        </div>
+        <form id="task_form">
+            <label for="task">Task</label><br />
+            <input type="text" id="task" name="task" /><br />
+            <input type="button" id="add_task" name="add_task" value="Add Task" />
+            <input type="button" id="clear_tasks" name="clear_tasks" value="Clear Tasks" /><br/>
+            <input type="button" id="deletel_task" name="deletel_task" value="Deletel Task" />
+            <input type="button" id="toggle_sort" name="toggle_sort" value="Toggle Sort" /><br/>
+            <input type="button" id="set_name" name="set_name" value="Set Name" />
+            <input type="button" id="filler_task" name="filler_task" value="Filler Task" />
+
+        </form>
+    </main>
+</body>
+
+</html>

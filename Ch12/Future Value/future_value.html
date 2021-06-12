@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Future Value Calculator</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="Css/fut.css">
+    <script src="Js/value.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <h2>Future Value Calculator</h2>
+        <form id="caculatorform" action="a.html">
+            <label for="investment">Total Investment:</label>
+            <input type="text" id="investment" name="investment" />
+            <span id="investmentEr">*</span><br />
+
+            <label for="rate">Annual Interest Rate:</label>
+            <input type="text" id="rate" name="rate" />
+            <span id="rateEr">*</span><br />
+
+            <label for="year">Number of Year:</label>
+            <input type="text" id="years" name="years" />
+            <span id="yearEr">*</span><br />
+
+            <label for="futurevalue">Future Value:</label>
+            <input disabled type="text" id="future" name="future" />
+            <br />
+            <input type="button" id="calculate" value="Calculate" />
+
+        </form>
+        <p id="today"></p>
+    </header>
+
+
+</body>
+
+</html>
