@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <script src="./js/storageLibrary.js"></script>
+    <script src="./js/taskLibrary.js"></script>
+    <script src="./js/task.js"></script>
+    <style>
+        html{
+            font-size: 62.5%;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 100%;
+        }
+        .task{
+            width: 70rem;
+            padding: 3rem;
+            border: 2px solid black;
+            box-shadow: 4px 4px 4px gray;
+            margin: 20rem auto;
+           
+        }
+        .task_list{
+            display: flex;
+        }
+        .task__left{
+            width: 30%;
+        }
+        .task__right{
+            width: 70%;
+        }
+        .task__btns{
+            padding-top: 2rem;
+        }
+        input{
+            width: 20rem;
+            margin: 0.2rem;
+            box-sizing: border-box;
+        }
+        label{
+            display: block;
+            width: 20rem;
+            font-size: 1.6rem;
+        }
+        h3{
+            font-size: 3rem;
+            margin: 0;
+            padding: 0;
+        }
+        .message{
+            font-size: 1.4rem;
+            color: red ;
+            padding: 0;
+            margin: 0;
+        }
+        .display_task{
+            display: block;
+            width:80%;
+            height: 15rem;
+            background-color: rgb(197, 194, 194);
+            border: 2px solid black;
+            padding: 1rem;
+            font-size: 1.6rem;
+            overflow: hidden;
+        }
+         .task_name{
+             margin: 0;
+             margin-left: 2rem;
+         }
+         a{
+             margin-left: 1rem;
+             text-decoration: underline;
+             color: blue;
+
+         }
+         a:hover{
+             color:rgb(95, 95, 214);
+             cursor: pointer;
+         }
+        .display_item{
+            display: flex;
+            align-items: stretch;
+        }
+    </style>
+    
+</head>
+<body>
+    <body>
+        <div class="task">
+            <h3>Task Manager</h3>
+            <div class="task_list">
+                <div class="task__left">
+                    <label for="task">Task</label>
+                    <input type="text" name="task" id="task">
+                    <p class="message" id="message"></p>
+                    <div class="task__btns">
+                        <input type="button" value="Add Task" id="add_task" >
+                        <input type="button" value="Clear Tasks" id="clear_tasks" onclick="clearTasks()">
+                     
+                    </div>
+                </div>
+                <div class="task__right">
+                    <div class="display_task" id="display_task">
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+           <script>
+          
+           </script>
+    </body>
+    </html>
+</body>
+</html>

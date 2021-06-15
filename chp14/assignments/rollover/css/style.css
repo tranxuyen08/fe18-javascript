@@ -1,0 +1,32 @@
+html{
+    font-size: 62.5%;
+    padding: 0;
+    margin: 0;
+
+}
+body{
+    width: 100%;
+}
+main{
+    width: 90rem;
+    display: block;
+    margin: 10rem auto ;
+    text-align: center;
+    border: 2px solid blue;
+    border-radius: 3px;
+    box-shadow: 4px 4px 4px blue;
+}
+h1{
+    font-size: 4rem;
+    color: cadetblue;
+    padding: 0;
+
+}
+p{
+    font-size: 2rem;
+}
+.box_img{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 4rem;
+}
