@@ -4,67 +4,34 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-    <style>
-      * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-      }
-      a {
-        margin-right: 10px;
-        display: inline-block;
-        padding: 5px;
-      }
-      main {
-        width: 900px;
-        max-width: 100%;
-        margin: 0 auto;
-        padding: 30px;
-        display: flex;
-      }
-      input {
-        width: 100%;
-      }
-      form {
-        margin: 0 15px;
-        flex: 1;
-      }
-      #list-task {
-        flex: 1;
-        margin: 0 15px;
-        min-height: 150px;
-        border: 1px solid #444;
-      }
-      .group-btn {
-        margin-top: 10px;
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        gap: 10px;
-      }
-    </style>
+    <title>Task Manager Application</title>
+    <link type="text/css" rel="stylesheet" href="styles/main.css" />
+    <script type="text/javascript" src="js/library_storage.js"></script>
+    <script type="text/javascript" src="js/library_tasklist.js"></script>
+    <script type="text/javascript" src="js/library_task.js"></script>
+    <script type="text/javascript" src="js/task.js"></script>
   </head>
   <body>
     <main>
-      <form action="">
-        <h1>Task Manager</h1>
-        <label for="task">Task</label>
-        <br />
-        <input type="text" id="task" />
-        <div class="group-btn">
-          <input type="button" id="add-task" value="Add task"></input>
-          <input type="button" id="clear-task" value="Clear task"></input>
-        </div>
+      <h1>Task Manager</h1>
+      <div id="tasks"></div>
+      <form id="task_form">
+        <label for="task">Task</label><br />
+        <input type="text" id="task" name="task" /><br />
+        <input
+          type="button"
+          id="add_task"
+          name="add_task"
+          value="Add Task"
+        /><br />
+        <input
+          type="button"
+          id="clear_tasks"
+          name="clear_tasks"
+          value="Clear Tasks"
+        />
       </form>
-      <br />
-      <div name="list-task" id="list-task"></div>
+      <div class="clear"></div>
     </main>
-    <script src="./libary_storage.js"></script>
-    <script src="./libary_tasklist.js"></script>
-    <script src="./main.js"></script>
   </body>
 </html>

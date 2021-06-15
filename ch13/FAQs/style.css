@@ -1,0 +1,16 @@
+ul {
+  list-style: none;
+}
+h4 i {
+  margin-right: 5px;
+}
+h4 a:hover,
+h4 a:focus {
+  color: crimson;
+}
+div {
+  display: none;
+}
+div.active {
+  display: block;
+}
