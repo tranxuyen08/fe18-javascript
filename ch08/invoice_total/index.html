@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="./main.js"></script>
+    <title>Invoice_Total</title>
+  </head>
+  <body>
+    <main>
+        <h1>Invoice Total Calculator</h1>
+        <p>Enter the two values that follow and click "Calculate".</p>
+        <form id="invoice">
+            <label for="type">Customer Type:</label>
+            <select id="type">
+                <option value="r">Regular</option>
+                <option value="l">Loyalty program</option>
+                <option value="h">Honored Citizen</option>
+                <option value="e">Employee</option>
+            </select>
+            <br/>
+    
+            <label for="subtotal">Invoice Subtotal:</label>
+            <input type="text" id="subtotal" name="subtotal"/>
+            <span>*</span>
+            <br/>
+            <span id="subtotalError"></span>
+            <br/>
+            <hr/>
+    
+            <label for="percent">Discount Percent:</label>
+            <input type="text" id="percent" name="percent" disabled/>%
+            <br/>
+    
+            <label for="amount">Discount Amount:</label>
+            <input type="text" id="amount" name="amount" disabled/>
+            <br/>
+    
+            <label for="total">Invoice Total:</label>
+            <input type="text" id="total" name="total" disabled/>
+            <br/>
+    
+            <input type="button" id="calculate" value="Calculate"/>
+        </form>
+    </main>
+</body>
+</html>
