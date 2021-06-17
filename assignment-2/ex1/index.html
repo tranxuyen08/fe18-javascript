@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+    <script>
+       
+        
+        var displayArray =function(arr){
+            NumStr = "Array is : ";
+            for (var i in arr){
+                NumStr += " "+ i;
+            }
+          return NumStr;
+        }
+        var find = function(x,arr){
+            for (var i in arr){
+                if(x==i){
+                    return true;
+                }
+            }
+            return false;
+        }
+        var maxArray =function(arr){
+            max=arr.reduce(function(a,b){
+                return a>b? a:b;
+            },0);
+            return max;
+        }
+        var sumArray =function(arr){
+            return arr.reduce(function(a,b){return parseFloat(a)+parseFloat(b);},0);
+        }
+        
+        var sortDescending = function(arr){
+            var arr_sort = arr.sort();
+            var temp =[]
+            for (var i = arr_sort.length-1;i>=0;i--){
+                temp.push(arr_sort[i]);
+            }   
+            return temp;
+
+        }
+        var menu =function(){
+            var arr = new Array(10);
+            do{
+            var check = true;
+            strNum= prompt("enter 10 elements for arr: ");
+            arr =strNum.split(" ");
+            arr.filter(function(x){
+                if (Number.isNaN(x)){
+                    check =false;
+                }
+            });
+            
+            }
+            while(check== false){
+                do{
+
+                
+                var choisse = prompt("Menu array: \n 1. display all element for array. \n 2. find x in array. \n 3.max of array.\n"+
+                "4.sum of array.\n 5.sort descending of array. \n 6.exit");
+
+                switch(parseInt(choisse)){
+                    case 1: alert(displayArray(arr))
+                            break;
+                    case 2:var x = prompt('enter number find: ');
+                            alert(find(x,arr))
+                            break;
+                     case 3: alert(maxArray(arr))
+                            break;
+                            
+                     case 4: alert(sumArray(arr))
+                            break;
+                     case 5: alert(sortDescending(arr))
+                            break;
+                    default: break;  
+                }
+            }
+            while(choisse!=6){
+                alert('exit!');
+            }
+            }
+        } 
+        menu();
+      
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

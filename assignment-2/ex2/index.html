@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        do{
+            [m,n]= prompt("enter m, n: ").split(" ");
+            console.log(m,n)
+        }
+         while(Number.isNaN(m) || Number.isNaN(m)){
+
+         }
+
+        var arr = new Array(m);
+        var enterArray = function(arr){
+            for(var i=0 ;i<m;i++){
+                arr[i] = new Array(n);
+                for(var j = 0;j<n;j++){
+                    arr[i][j] = parseInt(prompt("arr["+i+"]["+j+"]= "));
+                }
+            }
+       
+        }
+        var displayArray = function(arr){
+            s= " array is: \n"
+            for(var i=0 ;i<m;i++){
+
+                     s +=arr[i].join(" ") +"\n";
+            }
+            alert(s);
+       
+        }
+        var sumArray =function(arr){
+            var sum = 0;
+            for (var i = 0;i<m;i++){
+                for (var j = 0;j<n;j++){
+                    sum += arr[i][j];
+                }
+            }
+            return sum;
+        }
+        var checkNumber =function(arr,n){
+
+            for (var i = 0;i<m;i++){
+                for (var j = 0;j<n;j++){
+                    if (n==arr[i][j])
+                        return true;
+
+                }
+            }
+            return false;
+        }
+        var sort =function(arr){
+            var temp = []
+            for (var i = 0;i<m;i++){
+            
+                for (var j = 0;j<n;j++){
+                   temp.push(arr[i][j])
+                }
+            }
+            temp=temp.sort();
+            k =0;
+            for (var i = 0;i<m;i++){
+            
+            for (var j = 0;j<n;j++){
+               arr[i][j]= temp[k];
+               k++;
+            }
+        }
+       
+        }
+        var menu =function(){
+      
+                do{
+
+                var choisse = prompt("Menu array: \n 1. enter array. \n 2. display array. \n 3.find x in array.\n"+
+                "4.sum of array.\n 5.sort ascending of array. \n 6.exit");
+
+                switch(parseInt(choisse)){
+                    case 1: enterArray(arr)
+                            break;
+                    case 2: displayArray(arr)
+                            break;
+                     case 3: x = prompt('enter number : ');
+                            alert(checkNumber(arr,x)) ;
+                            break;
+                            
+                     case 4: alert(sumArray(arr))
+                            break;
+                     case 5: sort(arr)
+                            displayArray(arr);
+                            break;
+                    default: break;  
+                }
+            }
+            while(choisse!=6){
+                alert('exit!');
+         
+            }
+        } 
+        menu()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
