@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="./main.js"></script>
+    <title>Task_Lisk</title>
+</head>
+<body>
+    <main>
+      <h1>Task Manager</h1>
+      <div id="tasks">
+        <label for="task_list"><span id="name"></span> Tasks</label><br />
+        <textarea id="task_list" name="task_list" rows="8" readonly></textarea>
+      </div>
+      <form id="task_form">
+        <label for="task">Task</label><br />
+        <input type="text" id="task" name="task" /><br />
+        <div class="row">
+          <div class="col-left">
+            <input type="button" id="add_task" name="add_task" value="Add Task" /><br />
+            <input type="button" id="delete_task" name="delete_task" value="Delete Task" /><br />
+            <input type="button" id="set_name" name="set_name" value="Set Name" /><br />
+          </div>
+          <div class="col-right">
+            <input type="button" id="clear_tasks" name="clear_tasks" value="Clear Tasks" />
+            <input type="button" id="toggle_sort" name="toggle_sort" value="Toggle Sort" />
+            <input type="button" id="filter_tasks" name="filter_tasks" value="Filter Tasks" />
+          </div>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
