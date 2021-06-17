@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1">
+	<title>Test 3</title>
+    <script>
+        // Program to show list of names
+        (function listName() {
+            var arrName = [];
+            var stringName = "";
+            do {
+                var name = prompt("Enter a name");
+                arrName.push(name);
+            } while (name);
+            // for (var i=0; i < arrName.length; i++) {
+            //     if (arrName[i]) stringName += arrName[i] + "\n";
+            // }
+            for (var elements in arrName) {
+                stringName = arrName.join("\n");
+            }
+            alert("List of names:\n\n" + stringName);
+        })();
+    </script>
+</head>
+
+<body>
+    <main>        
+        <h1>Thanks for your using this application.</h1>
+    </main>
+</body>
+</html>

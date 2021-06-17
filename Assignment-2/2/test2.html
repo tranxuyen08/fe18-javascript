@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1">
+	<title>Test 2</title>
+    <script>
+        // A program has functions to do with 2-dimension array
+
+        // 1.create an array with two-dimension
+        var n = prompt("Enter n (row):");
+            n = parseInt(n);
+        var m = prompt("Enter m (column):");
+            m = parseInt(m);        
+        if (n < 0 || m < 0 || isNaN(n) || isNaN(m)) {
+            alert("Please enter the valid number - greater than 0!");
+        } else {
+            var arr = new Array(m);
+            for (var k = 0; k < arr.length; k++) {
+                    arr[k] = new Array(n);
+            }
+        }
+
+        function createArray() {
+            var n = prompt("Enter n (row):");
+            n = parseInt(n);
+            var m = prompt("Enter m (column):");
+            m = parseInt(m);
+            if (n < 0 || m < 0 || isNaN(n) || isNaN(m)) {
+                alert("Please enter the valid number - greater than 0!");
+            } else {
+                var arr = new Array(m);
+                for (var k = 0; k < arr.length; k++) {
+                    arr[k] = new Array(n);
+                }
+            }
+        }
+        
+
+        // 2.enter value of array
+        function enterValue() {
+            for (var i = 0; i < m; i++) {
+                for (var j = 0; j < n; j++) {
+                    arr[i][j] = parseInt(prompt("Enter element arr[" + i + "][" + j + "]: "));
+                }
+            }
+        }
+        enterValue();
+
+        // 3.display all value of array
+        function displayArray(arr) {
+            var stringArray = "The elements of array:\n\n";
+            for (var i = 0; i < m; i++) {
+                for (var j = 0; j < n; j++) {
+                    stringArray += arr[i][j] + " ";
+                }
+                stringArray += "\n";
+            }
+            return alert(stringArray);
+        }
+        displayArray(arr);
+
+        // 4.calculate sum of elements
+        function calSumArray(arr) {
+            var sum = 0;
+            for (var i = 0; i < m; i++) {
+                for (var j = 0; j < n; j++) {
+                    sum += arr[i][j];
+                }
+            }
+            return alert("Sum of elements in array: " + sum);
+        }
+        calSumArray(arr);
+
+        // 5.check exist in array
+        function findExistInArray(arr) {
+            var e = prompt("Enter the check number");
+            if (!isNaN(parseInt(e)) ) {
+                for (var i = 0; i < m; i++) {
+                    for (var j = 0; j < n; j++) {
+                        if (arr[i][j] == parseInt(e))
+                            return alert("The number is exist in array!");
+                    }
+                }
+                return alert("The number is not exist in array!");
+            } else {
+                alert("Please enter the number!");
+            }            
+        }
+        findExistInArray(arr);
+
+        // 6.sort by ascending
+        function sortArrayAscending2d(arr) {
+            var b = [];
+            var k = 0;
+            for (var i=0; i < m; i++) {
+                for (var j=0; j < n; j++) {
+                    arr[i][j] = b[k];
+                    k++;
+                }                
+            }
+            b.sort(function(a, b) {
+                return a - b;
+            });
+            k = 0;
+            for (var i=0; i < m; i++) {
+                for (var j=0; j < n; j++) {
+                    arr[i][j] = b[k];
+                    k++;
+                }
+            }
+            var newArr = displayArray(arr);
+            return newArr;
+        }
+        sortArrayAscending2d(arr);
+
+        // 7.setup menu to-do-list
+        function menuList2() {
+            var opt = prompt("Please enter a number with your option (1-5)",1);
+            if (opt) {
+                if (parseInt(opt) < 1 || parseInt(opt) > 5 || isNaN(parseInt(opt)) ) {
+                    alert("Please enter the optional number is from 1 to 5.");
+                } else {
+                    opt = parseInt(opt);
+                    switch(opt) {
+                        case 1:
+                            createArray();
+                            enterValue();
+                            break;
+                        case 2:
+                            createArray();
+                            enterValue();
+                            displayArray(arr);
+                            break;
+                        case 3:
+                            createArray();
+                            enterValue();
+                            calSumArray(arr);
+                            break;
+                        case 4: 
+                            createArray();
+                            enterValue();
+                            findExistInArray(arr);
+                            break;
+                        case 5: 
+                            createArray();
+                            enterValue();
+                            sortArrayAscending2d(arr);
+                            break;
+                        default: 
+                            break;
+                    }
+                }
+            } else {
+                alert("Please enter the number with your option:\n" + 
+                "1. Create an array\n" +
+                "2. Display the array\n" +
+                "3. Calculate sum of all elements\n" +
+                "4. Check exist number\n" +
+                "5. Sort ascending elements.");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <main>        
+        <h1>Thanks for your using this application.</h1>
+    </main>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1">
+	<title>Test 1</title>
+    <script>
+        // 1.create array 10 elements
+        var ar = [2, 5, 16, 4, 9, 1, 7, 30, 8, 19];
+        // 2.print all members to screen
+        function displayArray(ar) {
+            var show = "This is default array of numbers: ";
+            for (var i = 0; i < ar.length; i++) {
+                show += ar[i] + " ";
+            }
+            return alert(show);
+        }        
+        
+        // 3.function to enter a value and check exist in array
+        function checkValue(e, ar) {
+            e = prompt("Enter any number to check:");
+            e = parseInt(e);
+            if (isNaN(e)) {
+                alert("Please enter the valid number!");
+            } else {
+                for (var i = 0; i < ar.length; i++) {
+                    if (e == ar[i]) return alert("The number is exist in array!");
+                }
+                return alert("The number is not exist in array!");
+            }                
+        }        
+
+        // 4.function to find the max value in array
+        function maxValue(ar) {
+            var max = -Infinity;
+            for (var i=0; i < ar.length; i++) {
+                if (ar[i] > max) max = ar[i];
+                continue;
+            }
+            return alert("Maximum number in array is: " + max);
+        }
+        
+        // 5.function to calculate sum of all elements
+        function calculateSUM(ar) {
+            var sum = 0;
+            for (var i=0; i < ar.length; i++) {
+                sum += ar[i];
+            }
+            return alert("Total of elements is: " + sum);
+        }
+        
+        // 6.function to sort by descending
+        function sortArrDescending1d(a, b) {
+            return b-a;
+        }
+        var sort = ar.sort(sortArrDescending1d);
+        alert("Descending numbers of array: " + sort.join(" "));
+
+        // 7.setup menu to do list
+        function menuList1() {
+            var opt = prompt("Please enter a number with your option: (1-6)",1);
+            if (opt) {
+                if (parseInt(opt) < 1 || parseInt(opt) > 6 || isNaN(parseInt(opt)) ) {
+                    alert("Please enter the optional number is from 1 to 6.");
+                } else {
+                    opt = parseInt(opt);
+                    switch(opt) {
+                        case 1:
+                            var arr = [];
+                            break;
+                        case 2:
+                            var ar = [2, 5, 16, 4, 9, 1, 7, 30, 8, 19];
+                            displayArray(ar);
+                            break;
+                        case 3:
+                            var ar = [2, 5, 16, 4, 9, 1, 7, 30, 8, 19];
+                            checkValue(e, ar);
+                            break;
+                        case 4: 
+                            var ar = [2, 5, 16, 4, 9, 1, 7, 30, 8, 19];
+                            maxValue(ar);
+                            break;
+                        case 5: 
+                            var ar = [2, 5, 16, 4, 9, 1, 7, 30, 8, 19];
+                            calculateSUM(ar);
+                            break;
+                        case 6:
+                            var ar = [2, 5, 16, 4, 9, 1, 7, 30, 8, 19];
+                            ar.sort(sortArrDescending1d);
+                            displayArray(ar);
+                        default: 
+                            break;
+                    }
+                }
+            } else {
+                alert("Please enter the number with your option:\n" + 
+                "1. Create an array\n" +
+                "2. Display the array\n" +
+                "3. Check exist number\n" +
+                "4. Find maximum value\n" +
+                "5. Calculate sum of all elements\n" +
+                "6. Sort descending elements.");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    
+    <main>        
+        <h1>Thanks for your using this application.</h1>
+    </main>
+</body>
+</html>
