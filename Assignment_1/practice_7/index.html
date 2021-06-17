@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student</title>
+  </head>
+  <body>
+    <script>
+        function addStudent() {
+            var studentCode;
+            var studentName;
+            var studentAge;
+            var studentSex;
+            var studentItem = '';
+            var studentList = [];
+            var show = 'The student list';
+            var again;
+        do {
+            studentCode = prompt('Enter Student Code', 7);
+            studentName = prompt('Enter Student Name', 'Trung Kien');
+            studentAge = prompt('Enter Student Age', 27);
+            studentSex = prompt('Enter Student Sex', 'Male');
+            studentItem =
+        'Student ID : ' + studentCode +
+        ' - Student Name : ' + studentName +
+        ' - Student Age : ' + studentAge +
+        ' - Student Sex : ' + studentSex; studentList[studentList.length] = studentItem; again = prompt('Bạn có muốn tiếp tục (Nhấn ESC để thoát) !', 'y');
+        } while (again !== null);
+                document.write(show + '<br>');
+        for (var i = 0; i < studentList.length; i++) {
+                document.write(studentList[i] + '<br>');
+        }
+    }
+        window.onload = function () {
+        addStudent();
+    };
+    </script>
+  </body>
+</html>

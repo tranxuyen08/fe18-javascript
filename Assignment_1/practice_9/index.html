@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Greatest Common Divisor</title>
+</head>
+<body>
+    <script>
+        function greatestCommonDivisor(a, b) {
+            if (a === 0 || b === 0) {
+            return a + b;
+            }
+            while (a !== b) {
+            if (a > b) {
+                a -= b;
+            } else {
+            b -= a;
+            }
+        }
+            return a;
+        }
+        function getResult() {
+            var a, b;
+            var again;
+        do {
+            a = prompt('Enter number one', );
+            b = prompt('Enter number two', );
+            if (isNaN(a) || isNaN(b)) {
+            alert('error');
+        } else {
+            a = parseInt(a);
+            b = parseInt(b);
+            show = greatestCommonDivisor(a, b);
+            alert('result =' + show);
+        }
+            again = prompt('Enter again (y/n)', 'y');
+            } while (again === 'y');
+        }
+        window.onload = function () {
+        getResult();
+        };
+    </script>
+</body>
+</html>
