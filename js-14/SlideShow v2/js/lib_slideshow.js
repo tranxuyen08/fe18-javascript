@@ -8,7 +8,7 @@ var createSlideshow = function() {
         cache: [],
         count: 0
     };
-
+    
     var stopSlideshow = function() {
         clearInterval(timer);
     };
@@ -49,22 +49,26 @@ var createSlideshow = function() {
                     that.startSlideshow();
                 }
                 play = !play;
-                setPlayText(this); 
+                setPlayText(this);
             };
         },
         fastToggleHandler: function() {
-            if (speed >= 500) {
-                speed = speed/2;
+            var that = this;
+            return function() {
+                if (speed >= 1000) {
+                    speed = speed/2;
+                    that.startSlideshow();
+                }
             }            
-            timer = setInterval(nextImage, speed);
-            return this;
         },
         slowToggleHandler: function() {
-            if (speed >= 500) {
-                speed = speed*2;
-            }
-            timer = setInterval(nextImage, speed);
-            return this;
+            var that = this;
+            return function() {
+                if (speed >= 500) {
+                    speed = speed*2;
+                    that.startSlideshow();
+                }
+            }            
         }
     };
 };
