@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Future Value application</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./future_value.css" />
+    <script src="./future_value.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1>Future Value Calculator</h1>
+      <form id="future_value" action="" method="GET">
+        <label for="investment">Investment Amount:</label>
+        <input type="text" id="investment" name="investment" /><br />
+
+        <label for="rate">Annual Interest Rate:</label>
+        <input type="text" id="rate" name="rate" /><br />
+
+        <label for="years">Number of Years:</label>
+        <input type="text" id="years" name="years" /><br />
+
+        <label>Future Value:</label>
+        <input type="text" id="result" name="result" disabled /><br />
+
+        <input type="button" id="calculate" name="calculate" value="Calculate" />
+      </form>
+      <p id="date"></p>
+      <script>
+        n =  new Date();
+        y = n.getFullYear();
+        m = n.getMonth() + 1;
+        d = n.getDate();
+        time = n.getHours() + ":" + n.getMinutes()
+        document.getElementById("date").innerHTML ="Today is "+ d + "/" + m + "/" + y+" at "+time;
+      </script>
+    </main>
+  </body>
+</html>
