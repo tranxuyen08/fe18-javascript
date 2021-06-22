@@ -1,0 +1,18 @@
+h2 {
+    cursor: pointer;
+    background: url(./images/plus.png) no-repeat left center;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+  }
+  h2.minus {
+    background: url(./images/minus.png) no-repeat left center;
+  }
+  
+  div {
+    display: none;
+  }
+  div.open {
+    display: block;
+  }
+  

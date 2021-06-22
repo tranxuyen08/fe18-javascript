@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css.css" />
+    <title>Phương trình bậc 2</title>
+    <script>
+      var $ = function (id) {
+        return document.getElementById(id);
+      };
+
+      var calculate = function () {
+        var numbera = parseFloat($("numbera").value);
+        var numberb = parseFloat($("numberb").value);
+        var numberc = parseFloat($("numberc").value);
+        if (isNaN(numbera) || isNaN(numberb) || isNaN(numberc)) {
+          alert("Please enter number");
+        } else {
+          if (numbera == 0) {
+            if (numberb == 0) {
+              if (numberc == 0) {
+                alert("phương trình vô số nghiệm");
+              } else {
+                alert("phương trình vô nghiệm");
+              }
+            } else {
+              var x = -numberc / numberb;
+              document.getElementById("result").innerHTML = "X is " + x;
+            }
+          }
+          else{
+            var delta = numberb*numberb-4*numbera*numberc;
+            if(delta<0){
+              document.getElementById("result").innerHTML = "phương trình vô nghiệm";
+            }
+            if(delta==0){
+              var x = -numberb/2*numbera;
+              document.getElementById("result").innerHTML = "X1 = X2 is: " + x;
+            }
+            if(delta>0){
+              var x1=(-numberb+Math.sqrt(delta))/2*numbera;
+              var x2=(-numberb-Math.sqrt(delta))/2*numbera;
+              document.getElementById("result").innerHTML = "X1 = " + x1+" , X2 = "+x2;
+            }
+          }
+        }
+      };
+      window.onload = function () {
+        $("calculate").onclick = calculate;
+        $("numbera").focus();
+        $("numberb").focus();
+        $("numberc").focus();
+      };
+    </script>
+  </head>
+  <body>
+    <main>
+      <h1>Phương trình bậc 2</h1>
+      <form id="prime" action="" method="GET">
+        <label for="numbera">Enter number a:</label>
+        <input type="text" id="numbera" name="numbera" /><br />
+
+        <label for="numberb">Enter number b:</label>
+        <input type="text" id="numberb" name="numberb" /><br />
+
+        <label for="numberc">Enter number c:</label>
+        <input type="text" id="numberc" name="numberc" /><br />
+
+        <p type="text" id="result" name="result"></p>
+        <br />
+
+        <input
+          type="button"
+          id="calculate"
+          name="calculate"
+          value="Calculate"
+        />
+      </form>
+    </main>
+  </body>
+</html>

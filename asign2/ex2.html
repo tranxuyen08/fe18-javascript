@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        const a = [];
+
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+    Nhập n: <input type="text" id="myTextn" value="">
+    <br>
+    Nhập m: <input type="text" id="myTextm" value="">
+    <br>
+    <button onclick="inputarray()">Submit</button>
+    <p id="1" style="visibility:hidden">1. In mảng</p>
+    <p id="2" style="visibility:hidden">2. Tính tổng của mảng</p>
+    <p id="3" style="visibility:hidden">3. Tìm giá trị có trong mảng hay không </p>
+    <p id="4" style="visibility:hidden">4. Sắp xếp mảng theo thứ tự tăng dần</p>
+    <input type="text" id="mytextinput" style="visibility:hidden">
+    <button onclick="luachon()" style="visibility:hidden" id="5">Go</button>
+    <p id="demo"></p>
+    <p id="test"></p>
+
+
+    <script>
+
+        function luachon() {
+            switch (document.getElementById("mytextinput").value) {
+                case "1":
+                    printarray();
+                    break;
+                case "2":
+                    totalarray();
+                    break;
+                case "3":
+                    checkarray();
+                    break;
+                case "4":
+                    softarray();
+                    break;
+            }
+        }
+
+        function inputarray() {
+            var m = document.getElementById("myTextm").value;
+            var n = document.getElementById("myTextn").value;
+            for (var i = 1; i <= n; i++) {
+                a[i] = [];
+                for (var j = 1; j <= m; j++) {
+                    var them = prompt("nhập số muốn thêm", 10);
+                    them = parseInt(them);
+                    a[i].push(them)
+                }
+            }
+            console.log(a)
+            document.getElementById("demo").innerHTML = " Bạn đã nhập mảng thành công"
+            document.getElementById("1").style.visibility = "visible";
+            document.getElementById("2").style.visibility = "visible";
+            document.getElementById("3").style.visibility = "visible";
+            document.getElementById("4").style.visibility = "visible";
+            document.getElementById("5").style.visibility = "visible";
+            document.getElementById("mytextinput").style.visibility = "visible";
+        }
+
+        function printarray() {
+
+            document.getElementById("demo").innerHTML = "Mảng của bạn là " + a;
+        }
+        function totalarray() {
+            var sum = 0;
+            var m = document.getElementById("myTextm").value;
+            var n = document.getElementById("myTextn").value;
+            if (m == 1 && n == 1) {
+                document.getElementById("demo").innerHTML = " Tổng của mảng là " + a;
+            }
+            else {
+                for (var i = 0; i <= n; i++) {
+                    for (var j = 0; j <= m; j++) {
+                        sum += parseInt(a[i][j]);
+                    }
+                }
+                document.getElementById("demo").innerHTML = " Tổng của mảng là " + sum;
+            }
+        }
+
+        function checkarray() {
+            var x = a[1][1];
+            x = parseInt(x);
+            console.log(x);
+            var check = "Phần tử chưa có trong mảng ";
+            var c = prompt("nhập số muốn tìm trong mảng");
+            c = parseInt(c);
+            var m = document.getElementById("myTextm").value;
+            var n = document.getElementById("myTextn").value;
+            if (m == 1 && n == 1) {
+
+                if (c == x) {
+                    document.getElementById("demo").innerHTML = " Phần tử đã có trong mảng ";
+                }
+                else {
+                    document.getElementById("demo").innerHTML = " Phần tử chưa có trong mảng ";
+                }
+            }
+            else {
+                for (var i = 0; i <= n; i++) {
+                    for (var j = 0; j <= m; j++) {
+                        if (c == parseInt(a[i][j]))
+                            check = "Phần tử đã có trong mảng"
+                    }
+                }
+                document.getElementById("test").innerHTML = check;
+            }
+        }
+        function softarray() {
+            var m = document.getElementById("myTextm").value;
+            var n = document.getElementById("myTextn").value;
+            for (var i = 0; i <= n; i++) {
+                for (var j = 0; j <= m; j++) {
+                    a.sort(function (c, d) {
+                        return c - d
+                    }
+                    );
+                }
+                document.getElementById("demo").innerHTML = "Mảng đã được sắp xếp " + a;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

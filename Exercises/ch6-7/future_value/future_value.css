@@ -1,0 +1,26 @@
+body {
+    background-color: white;
+    width: 730px;
+    margin: 0 auto;
+    border: 3px solid black;
+    padding: 0 2rem 1rem;
+  }
+  h1 {
+    font-size: 150%;
+    color: black;
+    margin-bottom: 1rem;
+  }
+  label {
+    float: left;
+    width: 14rem;
+  }
+  input {
+    width: 15rem;
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  input[type="button"] {
+    margin-left: 15rem;
+    width: 150px;
+  }
+  

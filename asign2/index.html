@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="js/array.js"></script>
+    <script>
+        var num = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+
+    </script>
+    <title>Document</title>
+
+</head>
+
+<body>
+    <p>1. In mảng </p>
+    <p>2. Kiểm tra Value</p>
+    <p>3. Tìm số lớn nhất</p>
+    <p>4. Tính tổng </p>
+    <p>5. Sắp xếp</p>
+    Nhập lựa chọn của bạn: <input type="text" id="myText" value="">
+    <button onclick="luachon()">Submit</button>
+    <br>
+    <br>
+    <input type="text" id="myText1" value="" style="visibility:hidden">
+    <button id="so2" style="visibility:hidden" onclick="myFunctioncheck()">Try it</button>
+    <p id="demo"></p>
+
+
+    <script>
+        function luachon() {
+            if (document.getElementById("myText").value == "2") {
+                document.getElementById("myText1").style.visibility = "visible";
+                document.getElementById("so2").style.visibility = "visible";
+            } else {
+                document.getElementById("myText1").style.visibility = "hidden";
+                document.getElementById("so2").style.visibility = "hidden";
+                switch (document.getElementById("myText").value) {
+                    case "1":
+                        printarray();
+                        break;
+                    case "3":
+                        myFunctionmax();
+                        break;
+                    case "4":
+                        myFunctionsum();
+                        break;
+                    case "5":
+                        myFunctionsapxep();
+                        break;
+                }
+            }
+        }
+        function printarray() {
+            var x = num.toString();
+            document.getElementById("demo").innerHTML = x;
+        }
+
+        function myFunctioncheck() {
+            var check = "Phần tử chưa có trong mảng";
+            var x = document.getElementById("myText1").value;
+            for (var i = 0; i < num.length; i++) {
+                if (x == num[i]) {
+                    check = "Phần tử đã có trong mảng";
+                }
+            };
+            document.getElementById("demo").innerHTML = check;
+        }
+
+        function myFunctionmax() {
+            let max = parseInt(num[0]);
+            for (let i = 0; i < num.length; i++) {
+                console.log(num[i])
+                if (max < parseInt(num[i])) {
+                    max = parseInt(num[i]);
+                }
+            }
+            document.getElementById("demo").innerHTML = max;
+
+        }
+        function myFunctionsum() {
+            let sum = 0;
+            for (let i = 0; i < num.length; i++) {
+                console.log(num[i])
+                sum += parseInt(num[i])
+            }
+            document.getElementById("demo").innerHTML = sum;
+
+        }
+        function myFunctionsapxep() {
+            for (let i = 0; i < num.length; i++) {
+                for (let j = i + 1; j < num.length; j++) {
+                    if (parseInt(num[i]) < parseInt(num[j])) {
+                        var n = num[i]
+                        num[i] = num[j];
+                        num[j] = n;
+                    }
+                    var x = num.toString();
+                }
+            }
+            document.getElementById("demo").innerHTML = x;
+        }
+    </script>
+</body>
+
+</html>

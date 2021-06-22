@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css.css" />
+    <title>Phương trình bậc 1</title>
+    <script>
+      var $ = function (id) {
+        return document.getElementById(id);
+      };
+
+      var calculate = function () {
+        var numbera = parseFloat($("numbera").value);
+        var numberb = parseFloat($("numberb").value);
+        if (isNaN(numbera) || isNaN(numberb)) {
+          alert("Please enter number");
+        } else {
+          if (numbera == 0) {
+            if (numberb == 0) {
+              alert("phương trình vô số nghiệm");
+            } else {
+              alert("phương trình vô nghiệm");
+            }
+          } else {
+            var c = -numberb/numbera;
+            $("result").value = c;
+          }
+        }
+      };
+
+      window.onload = function () {
+        $("calculate").onclick = calculate;
+        $("numbera").focus();
+        $("numberb").focus();
+      };
+    </script>
+  </head>
+  <body>
+    <main>
+      <h1>Phương trình bậc 1</h1>
+      <form id="prime" action="" method="GET">
+        <label for="numbera">Enter number a:</label>
+        <input type="text" id="numbera" name="numbera" /><br />
+
+        <label for="numberb">Enter number b:</label>
+        <input type="text" id="numberb" name="numberb" /><br />
+
+        <label>X is:</label>
+        <input type="text" id="result" name="result" disabled /><br />
+
+        <input
+          type="button"
+          id="calculate"
+          name="calculate"
+          value="Calculate"
+        />
+      </form>
+    </main>
+  </body>
+</html>

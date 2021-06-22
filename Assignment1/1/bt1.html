@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Swap</title>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <script>
+      "use strict";
+      var $ = function (id) {
+        return document.getElementById(id);
+      };
+      var a = prompt("Nhap A:");
+      var b = prompt("Nhap B:");
+      var temp = a;
+      a = b;
+      b = temp;
+
+      alert("Swap:\n A" + a + "\n" + "B:" + b);
+    </script>
+  </head>
+</html>

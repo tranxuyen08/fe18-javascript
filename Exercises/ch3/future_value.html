@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Future Value Application</title>
+    <script>
+      var again = "Yes";
+      do {
+        0 > years < 15;
+        var futureValue;
+        do {
+          var investment = prompt("Enter investment amount as xxxxx.xx", 10000);
+          investment = parseFloat(investment);
+          if (isNaN(investment)) {
+            alert("Investment must be a number");
+          }
+        } while (isNaN(investment));
+
+        do {
+          var rate = prompt("Enter interest rate as xx.x", 7.5);
+        } while (isNaN(rate) || rate <= 0 || rate >= 15);
+        rate = parseFloat(rate);
+
+        do {
+          var years = prompt("Enter number of years", 5);
+          years = parseInt(years);
+          if (isNaN(years)) {
+            alert("Year must be a number ");
+          }
+        } while (isNaN(years));
+
+        futureValue = investment;
+        document.write("Investment amount = " + investment);
+        document.write(" Interest rate = " + rate);
+        document.write(" Years = " + years);
+        document.write("<br/>");
+
+        for (var i = 1; i <= years; i++) {
+          document.write("Year = " + i);
+          var interest = (futureValue * rate) / 100;
+          document.write(", Interest = " + interest);
+          futureValue += interest;
+          document.write(", Value = " + parseInt(futureValue) + "<br>");
+        }
+        document.write("<br/>");
+        again = prompt("Do You want to continue. Press Yes/No?", "Yes");
+      } while (again == "Yes");
+    </script>
+  </head>
+
+  <body>
+    <main>
+      Thanks for using the Future Value application.
+    </main>
+  </body>
+</html>
